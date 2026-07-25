@@ -1,0 +1,12 @@
+# Source material — not part of the deployed site.
+# (Jern Proflie.pdf is 102MB and would exceed GitHub's 100MB file limit.)
+*.pdf
+
+# OS / editor cruft
+.DS_Store
+Thumbs.db
+desktop.ini
+*.swp
+*~
+.vscode/
+.idea/
