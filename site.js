@@ -145,19 +145,23 @@ function posterEl(p, i){
   }
 })();
 
-/* ---------- marquee walls (company showreel) ---------- */
+/* ---------- marquee (single looping showreel row on the home page) ---------- */
 (function(){
-  const r1 = document.getElementById('row1');
-  const r2 = document.getElementById('row2');
-  if(!r1 || !r2) return;
+  const row = document.getElementById('row1');
+  if(!row) return;
+  // interleave films and series so one strip still reads as a mixed slate
   const films = COMPANY_WORKS.filter(p => p.cat === 'film');
   const shows = COMPANY_WORKS.filter(p => p.cat !== 'film');
-  const fill = (row, list) => [list, list].flat().forEach((p, i) => row.appendChild(posterEl(p, i)));
-  fill(r1, films);
-  fill(r2, shows);
+  const mixed = [];
+  for(let i = 0; i < Math.max(films.length, shows.length); i++){
+    if(films[i]) mixed.push(films[i]);
+    if(shows[i]) mixed.push(shows[i]);
+  }
+  // duplicated once so the -50% keyframe loops without a seam
+  [mixed, mixed].flat().forEach((p, i) => row.appendChild(posterEl(p, i)));
 })();
 
-/* ---------- filmography grids (index + ceo-works) ---------- */
+/* ---------- filmography grids (works page + ceo page) ---------- */
 function buildGrid(hostId, list, countId){
   const host = document.getElementById(hostId);
   if(!host) return;
@@ -362,6 +366,7 @@ const I18N = {
     "wk.note":"* แสดงผลงานเพียงบางส่วน — ภาพโปสเตอร์เป็นลิขสิทธิ์ของสตูดิโอ/ผู้จัดจำหน่ายแต่ละราย ใช้เพื่อบันทึกประวัติผลงานเท่านั้น",
     "wk.g1":"ภาพยนตร์","wk.g2":"ซีรีส์เกาหลี","wk.g3":"ซีรีส์ฝรั่ง","wk.g4":"ซีรีส์จีน",
     "wk.ceolink":"ดูผลงานกำกับการพากย์ของ CEO",
+    "wk.viewall":"ดูผลงานทั้งหมด",
     "sp.head":'โปรเจกต์<span class="o">พิเศษ</span>',
     "sp.got.sub":"กำกับการพากย์เสียงเวอร์ชันพิเศษ โดยเหล่าดาราและศิลปินแถวหน้าของไทยมารับบทตัวละครหลักของซีรีส์ระดับโลก",
     "sp.c1":"มาริโอ้ เมาเร่อ","sp.c2":"แบงค์ ปรีติ","sp.c3":"บี น้ำทิพย์","sp.c4":"เพลง ชนม์ทิดา","sp.c5":"ตู่ นันทิดา","sp.c6":"พลอยชมพู",
@@ -446,6 +451,7 @@ const I18N = {
     "wk.note":"* A partial list of credits. Posters are the property of their respective studios/distributors, shown as a portfolio record only.",
     "wk.g1":"Movies","wk.g2":"Korean Series","wk.g3":"Western Series","wk.g4":"Chinese Series",
     "wk.ceolink":"See the CEO's directing credits",
+    "wk.viewall":"See all credits",
     "sp.head":'Special <span class="o">Projects</span>',
     "sp.got.sub":"Directing the special Thai dub featuring Thailand's leading celebrities and artists as the main cast of the global hit series.",
     "sp.c1":"Mario Maurer","sp.c2":"Bank Preeti","sp.c3":"Bee Namthip","sp.c4":"Pleng Chontida","sp.c5":"Tu Nantida","sp.c6":"Ploychompoo",

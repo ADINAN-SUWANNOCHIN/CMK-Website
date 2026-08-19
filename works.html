@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ผลงานทั้งหมด — CHAOR MA KOK Dubbing Studio</title>
+<meta name="description" content="ผลงานพากย์ไทยของสตูดิโอ CHAOR MA KOK — ภาพยนตร์ ซีรีส์เกาหลี ซีรีส์ฝรั่ง และซีรีส์จีน">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Kanit:wght@500;600;700;800;900&family=Prompt:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="icon" type="image/png" href="assets/logo.png">
+<link rel="apple-touch-icon" href="assets/logo-180.png">
+<link rel="canonical" href="https://chaormakok.com/works.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="CHAOR MA KOK">
+<meta property="og:locale" content="th_TH">
+<meta property="og:url" content="https://chaormakok.com/works.html">
+<meta property="og:title" content="ผลงานทั้งหมด — CHAOR MA KOK Dubbing Studio">
+<meta property="og:description" content="ผลงานพากย์ไทยของสตูดิโอ CHAOR MA KOK — ภาพยนตร์ ซีรีส์เกาหลี ซีรีส์ฝรั่ง และซีรีส์จีน">
+<meta property="og:image" content="https://chaormakok.com/assets/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="ผลงานทั้งหมด — CHAOR MA KOK Dubbing Studio">
+<meta name="twitter:description" content="ผลงานพากย์ไทยของสตูดิโอ CHAOR MA KOK — ภาพยนตร์ ซีรีส์เกาหลี ซีรีส์ฝรั่ง และซีรีส์จีน">
+<meta name="twitter:image" content="https://chaormakok.com/assets/og-image.jpg">
+<link rel="stylesheet" href="site.css">
+</head>
+<body>
+<!-- ================= NAV ================= -->
+<nav class="nav">
+  <div class="nav-in">
+    <a href="index.html" class="brand"><img class="logo" src="assets/logo.png" alt="CHAOR MA KOK logo"><span>CHAOR MA KOK<small data-i18n="brandsub">ดับบิ้ง สตูดิโอ · SINCE 2001</small></span></a>
+    <div class="nav-links">
+      <a href="works.html" class="act" data-i18n="nav.works">ผลงาน</a>
+      <a href="index.html#services" data-i18n="nav.services">บริการ</a>
+      <a href="index.html#process" data-i18n="nav.process">ขั้นตอน</a>
+      <a href="about.html" data-i18n="nav.about">เกี่ยวกับเรา</a>
+      <a href="ceo.html" data-i18n="nav.ceo">ผู้บริหาร</a>
+      <a href="index.html#contact" data-i18n="nav.contact">ติดต่อ</a>
+    </div>
+    <div class="lang" role="group" aria-label="Language">
+      <button id="btn-th" class="on" onclick="setLang('th')">TH</button>
+      <button id="btn-en" onclick="setLang('en')">EN</button>
+    </div>
+    <a href="index.html#contact" class="nav-cta" data-i18n="nav.cta">ขอใบเสนอราคา</a>
+  </div>
+</nav>
+
+<!-- ================= PAGE HEAD ================= -->
+<header class="page-head">
+  <div class="wrap">
+    <span class="eyebrow rv">OUR WORK</span>
+    <h2 class="h2 rv d1" data-i18n-html="wk.title">ผลงานที่<span class="o">ผ่านมือเรา</span></h2>
+    <p class="lead rv d2" data-i18n="wk.sub">ผลงานพากย์ไทยของสตูดิโอ CHAOR MA KOK — ภาพยนตร์ฟอร์มยักษ์ ซีรีส์เกาหลี ฝรั่ง และจีน</p>
+  </div>
+</header>
+
+<!-- ================= ALL WORKS ================= -->
+<section class="sec" style="padding-top:40px">
+  <div class="wrap">
+    <!-- ---- filmography by category ---- -->
+    <div class="wk-group rv">
+      <h3><span data-i18n="wk.g1">ภาพยนตร์</span><span class="n" id="nFilm"></span></h3>
+      <div class="wk-grid" id="gridFilm"></div>
+    </div>
+    <div class="wk-group rv">
+      <h3><span data-i18n="wk.g2">ซีรีส์เกาหลี</span><span class="n" id="nKr"></span></h3>
+      <div class="wk-grid" id="gridKr"></div>
+    </div>
+    <div class="wk-group rv">
+      <h3><span data-i18n="wk.g3">ซีรีส์ฝรั่ง</span><span class="n" id="nWest"></span></h3>
+      <div class="wk-grid" id="gridWest"></div>
+    </div>
+    <div class="wk-group rv">
+      <h3><span data-i18n="wk.g4">ซีรีส์จีน</span><span class="n" id="nCn"></span></h3>
+      <div class="wk-grid" id="gridCn"></div>
+    </div>
+    <a class="wk-more" style="color:var(--orange-deep)" href="ceo.html#credits"><span data-i18n="wk.ceolink">ดูผลงานกำกับการพากย์ของ CEO</span><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+    <p class="note" style="color:var(--ink-soft);margin-top:28px" data-i18n="wk.note">* แสดงผลงานเพียงบางส่วน — ภาพโปสเตอร์เป็นลิขสิทธิ์ของสตูดิโอ/ผู้จัดจำหน่ายแต่ละราย ใช้เพื่อบันทึกประวัติผลงานเท่านั้น</p>
+  </div>
+</section>
+
+<!-- ================= CTA ================= -->
+<section class="sec-slim" style="padding-top:0">
+  <div class="wrap">
+    <div class="cta-band rv">
+      <div>
+        <h3 data-i18n="cta.t">พร้อมเริ่มโปรเจกต์กับเราไหม?</h3>
+        <p data-i18n="cta.d">ส่งรายละเอียดงานมาคุยกันได้เลย — เราตอบกลับภายใน 24 ชั่วโมง</p>
+      </div>
+      <a class="btn btn-white" href="index.html#contact" data-i18n="cta.btn">ติดต่อสตูดิโอ</a>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="wrap">
+    <span>© 2026 CHAOR MA KOK Dubbing Studio · Since 2001</span>
+    <span data-i18n="ft">เราทำให้หนังมีชีวิต — We bring movies to life.</span>
+  </div>
+</footer>
+
+<!-- ================= WORK MODAL ================= -->
+<div class="md" id="workModal" role="dialog" aria-modal="true" aria-labelledby="mdTitle" hidden>
+  <div class="md-backdrop"></div>
+  <div class="md-card">
+    <button class="md-close" type="button" aria-label="Close"><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+    <div class="md-art"></div>
+    <div>
+      <span class="md-badge"></span>
+      <h3 class="md-title" id="mdTitle"></h3>
+      <div class="md-note"></div>
+      <div class="md-rows"></div>
+    </div>
+  </div>
+</div>
+
+<script src="site.js"></script>
+</body>
+</html>
