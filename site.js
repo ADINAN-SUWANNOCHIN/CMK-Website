@@ -52,10 +52,28 @@ const WORKS = [
   {en:"Rivals",                        cat:"series", reg:"west", owner:"company", note:"S1–S2", img:"rivals.jpg"},
   {en:"Scrubs",                        cat:"series", reg:"west", owner:"company", note:"S1", img:"scrubs.jpg"},
 
+  /* ---- moved from the CEO list: studio productions, per the client's notes ---- */
+  {en:"Goblin",                        cat:"series", reg:"kr", owner:"company", img:"goblin.jpg"},
+  {en:"Hotel Del Luna",                cat:"series", reg:"kr", owner:"company", img:"hotel-del-luna.jpg"},
+  {en:"Vincenzo",                      cat:"series", reg:"kr", owner:"company", img:"vincenzo.jpg"},
+  {en:"The Penthouse: War in Life",    cat:"series", reg:"kr", owner:"company", img:"penthouse.jpg"},
+  {en:"Link: Eat, Love, Kill",         cat:"series", reg:"kr", owner:"company", img:"link.jpg"},
+  {en:"Big Mouth",                     cat:"series", reg:"kr", owner:"company", img:"big-mouth.jpg"},
+  {en:"From Me to You",                cat:"series", reg:"jp", owner:"company", img:"from-me-to-you.jpg"},
+  {en:"The Makanai: Cooking for the Maiko House", cat:"series", reg:"jp", owner:"company", img:"makanai.jpg"},
+  {en:"Sanctuary",                     cat:"series", reg:"jp", owner:"company", img:"sanctuary.jpg"},
+  {en:"The Night Agent",               cat:"series", reg:"west", owner:"company", img:"night-agent.jpg"},
+  {en:"Mr. Midnight: Beware the Monsters", cat:"series", reg:"west", owner:"company", img:"mr-midnight.jpg"},
+
   /* ---------- COMPANY · CHINESE SERIES ---------- */
   {en:"Zhan Zhao Adventures",          cat:"series", reg:"cn", owner:"company", note:"S1", img:"zhan-zhao.jpg"},
 
   /* ---------- CEO · MOVIES ---------- */
+  {en:"Spider-Man: Brand New Day",           cat:"film", owner:"ceo", note:"2026", img:"spiderman-bnd.jpg"},
+  {en:"Toy Story 5",                         cat:"film", owner:"ceo", note:"2026", img:"toy-story-5.jpg"},
+  {en:"The Mandalorian and Grogu",           cat:"film", owner:"ceo", note:"2026", img:"mandalorian-grogu.jpg"},
+  {en:"Insidious: Out of the Further",       cat:"film", owner:"ceo", note:"2026", img:"insidious-6.jpg"},
+  {en:"Resident Evil",                       cat:"film", owner:"ceo", note:"2026", img:"resident-evil-2026.jpg"},
   {en:"Avatar: The Way of Water",             cat:"film", owner:"ceo", img:"avatar-2.jpg"},
   {en:"Black Panther: Wakanda Forever",       cat:"film", owner:"ceo", img:"wakanda-forever.jpg"},
   {en:"Guardians of the Galaxy Vol. 3",       cat:"film", owner:"ceo", img:"guardians-3.jpg"},
@@ -75,18 +93,14 @@ const WORKS = [
   {en:"Wonder Woman 1984",                    cat:"film", owner:"ceo", img:"ww84.jpg"},
   {en:"Monster Hunter",                       cat:"film", owner:"ceo", img:"monster-hunter.jpg"},
 
-  /* ---------- CEO · SERIES ---------- */
-  {en:"Goblin",                        cat:"series", reg:"kr",   owner:"ceo", img:"goblin.jpg"},
-  {en:"Hotel Del Luna",                cat:"series", reg:"kr",   owner:"ceo", img:"hotel-del-luna.jpg"},
-  {en:"Vincenzo",                      cat:"series", reg:"kr",   owner:"ceo", img:"vincenzo.jpg"},
-  {en:"The Penthouse: War in Life",    cat:"series", reg:"kr",   owner:"ceo", img:"penthouse.jpg"},
-  {en:"Link: Eat, Love, Kill",         cat:"series", reg:"kr",   owner:"ceo", img:"link.jpg"},
-  {en:"Big Mouth",                     cat:"series", reg:"kr",   owner:"ceo", img:"big-mouth.jpg"},
-  {en:"From Me to You",                cat:"series", reg:"west", owner:"ceo", img:"from-me-to-you.jpg"},
-  {en:"The Makanai: Cooking for the Maiko House", cat:"series", reg:"west", owner:"ceo", img:"makanai.jpg"},
-  {en:"The Night Agent",               cat:"series", reg:"west", owner:"ceo", img:"night-agent.jpg"},
-  {en:"Sanctuary",                     cat:"series", reg:"west", owner:"ceo", img:"sanctuary.jpg"},
-  {en:"Mr. Midnight: Beware the Monsters", cat:"series", reg:"west", owner:"ceo", img:"mr-midnight.jpg"},
+  /* ---------- CEO · SERIES (the titles that are genuinely his) ---------- */
+  {en:"The Falcon and the Winter Soldier", cat:"series", reg:"west", owner:"ceo", img:"falcon-winter-soldier.jpg"},
+  {en:"Moon Knight",                   cat:"series", reg:"west", owner:"ceo", img:"moon-knight.jpg"},
+  {en:"Loki",                          cat:"series", reg:"west", owner:"ceo", note:"S1–S2", img:"loki.jpg"},
+  {en:"Ms. Marvel",                    cat:"series", reg:"west", owner:"ceo", img:"ms-marvel.jpg"},
+  {en:"Secret Invasion",               cat:"series", reg:"west", owner:"ceo", img:"secret-invasion.jpg"},
+  {en:"Daredevil: Born Again",         cat:"series", reg:"west", owner:"ceo", note:"S1–S2", img:"daredevil-born-again.jpg"},
+  {en:"The Punisher: One Last Kill",   cat:"series", reg:"west", owner:"ceo", note:"หนังสั้นพิเศษ"},
 
   /* ---------- CEO · ANIMATION & DOCUMENTARY ---------- */
   {en:"Kitti Katz",                    cat:"animation", owner:"ceo", img:"kitti-katz.jpg"},
@@ -181,6 +195,8 @@ function buildGrid(hostId, list, countId){
 buildGrid('gridFilm',  COMPANY_WORKS.filter(p => p.cat === 'film'), 'nFilm');
 buildGrid('gridKr',    COMPANY_WORKS.filter(p => p.cat === 'series' && p.reg === 'kr'),   'nKr');
 buildGrid('gridWest',  COMPANY_WORKS.filter(p => p.cat === 'series' && p.reg === 'west'), 'nWest');
+buildGrid('gridJp',    COMPANY_WORKS.filter(p => p.cat === 'series' && p.reg === 'jp'),   'nJp');
+buildGrid('gridJp',    COMPANY_WORKS.filter(p => p.cat === 'series' && p.reg === 'jp'),   'nJp');
 buildGrid('gridCn',    COMPANY_WORKS.filter(p => p.cat === 'series' && p.reg === 'cn'),   'nCn');
 buildGrid('ceoFilm',   CEO_WORKS.filter(p => p.cat === 'film'),     'nCeoFilm');
 buildGrid('ceoSeries', CEO_WORKS.filter(p => p.cat === 'series'),   'nCeoSeries');
@@ -340,7 +356,7 @@ document.querySelectorAll('.rv').forEach(el => io.observe(el));
 /* ---------- i18n ---------- */
 const I18N = {
   th: {
-    brandsub:"ดับบิ้ง สตูดิโอ · SINCE 2001",
+    brandsub:"สตูดิโอพากย์ไทย · SINCE 2001",
     "nav.home":"หน้าแรก", "nav.about":"เกี่ยวกับเรา", "nav.services":"บริการ", "nav.works":"ผลงาน",
     "nav.ceo":"ผู้บริหาร", "nav.ceoworks":"ผลงาน CEO", "nav.process":"ขั้นตอน", "nav.contact":"ติดต่อ", "nav.cta":"ขอใบเสนอราคา",
     "hero.title":'เสียงที่ทำให้<br>ทุกเรื่องราว <span class="o">มีชีวิต</span>',
@@ -360,7 +376,7 @@ const I18N = {
     "ab.n1":"นักพากย์มืออาชีพ","ab.n2":"ผู้กำกับการพากย์","ab.n3":"นักแปลหลายภาษา","ab.n4":"ทีมงานร้อง (Vocal)",
     "ab.n5":"สตูดิโอบันทึกเสียง","ab.n6":"ห้องตัดต่อ + ห้องมิกซ์","ab.n7":"ตอนแอนิเมชัน & สารคดี","ab.n8":"ชั่วโมงพากย์ต่อปี",
     "ab.gal.t":"ภายในสตูดิโอ","ab.gal.d":"ห้องบันทึกเสียง ห้องตัดต่อ และห้องมิกซ์ของเรา",
-    "ab.team.t":"ทีมงานของเรา","ab.team.d":"ทีมนักพากย์ ผู้กำกับการพากย์ นักแปล และวิศวกรเสียงของ CHAOR MA KOK",
+    "ab.team.t":"ทีมงานของเรา","ab.team.d":"ทีมนักพากย์ ผู้กำกับการพากย์ และวิศวกรเสียงของ CHAOR MA KOK",
     "sv.title":'เราพากย์<span class="o">ทุกอย่าง</span>ที่มีเสียง',
     "sv.sub":"ตั้งแต่บล็อกบัสเตอร์ฮอลลีวูดจนถึงการ์ตูนซีรีส์ เราดูแลครบวงจร — แปลบท กำกับการพากย์ บันทึกเสียง ตัดต่อ จนถึงมิกซ์ขั้นสุดท้าย",
     "sv1.t":"พากย์ภาพยนตร์","sv1.d":"พากย์ไทยหนังโรงและสตรีมมิงมากกว่า 300 เรื่อง มาตรฐานเสียงระดับโรงภาพยนตร์ 2.0 และ 5.1",
@@ -372,14 +388,14 @@ const I18N = {
     "wk.title":'ผลงานที่<span class="o">ผ่านมือเรา</span>',
     "wk.sub":"ผลงานพากย์ไทยของสตูดิโอ CHAOR MA KOK — ภาพยนตร์ฟอร์มยักษ์ ซีรีส์เกาหลี ฝรั่ง และจีน",
     "wk.note":"* แสดงผลงานเพียงบางส่วน — ภาพโปสเตอร์เป็นลิขสิทธิ์ของสตูดิโอ/ผู้จัดจำหน่ายแต่ละราย ใช้เพื่อบันทึกประวัติผลงานเท่านั้น",
-    "wk.g1":"ภาพยนตร์","wk.g2":"ซีรีส์เกาหลี","wk.g3":"ซีรีส์ฝรั่ง","wk.g4":"ซีรีส์จีน",
+    "wk.g1":"ภาพยนตร์","wk.g2":"ซีรีส์เกาหลี","wk.g3":"ซีรีส์ฝรั่ง","wk.gjp":"ซีรีส์ญี่ปุ่น","wk.g4":"ซีรีส์จีน",
     "wk.ceolink":"ดูผลงานกำกับการพากย์ของ CEO",
     "wk.viewall":"ดูผลงานทั้งหมด",
     "wk.rowseries":"ซีรีส์",
     "sp.head":'โปรเจกต์<span class="o">พิเศษ</span>',
     "sp.got.sub":"กำกับการพากย์เสียงเวอร์ชันพิเศษ โดยเหล่าดาราและศิลปินแถวหน้าของไทยมารับบทตัวละครหลักของซีรีส์ระดับโลก",
     "sp.c1":"มาริโอ้ เมาเร่อ","sp.c2":"แบงค์ ปรีติ","sp.c3":"บี น้ำทิพย์","sp.c4":"เพลง ชนม์ทิดา","sp.c5":"ตู่ นันทิดา","sp.c6":"พลอยชมพู",
-    "cat.film":"ภาพยนตร์","cat.series":"ซีรีส์","cat.series.kr":"ซีรีส์เกาหลี","cat.series.west":"ซีรีส์ฝรั่ง","cat.series.cn":"ซีรีส์จีน",
+    "cat.film":"ภาพยนตร์","cat.series":"ซีรีส์","cat.series.kr":"ซีรีส์เกาหลี","cat.series.west":"ซีรีส์ฝรั่ง","cat.series.jp":"ซีรีส์ญี่ปุ่น","cat.series.cn":"ซีรีส์จีน",
     "cat.animation":"แอนิเมชัน","cat.docu":"สารคดี",
     "md.cat":"หมวดหมู่","md.by":"ผลงานของ",
     "md.byCompany":"พากย์ไทยโดยสตูดิโอ CHAOR MA KOK",
@@ -390,16 +406,16 @@ const I18N = {
     "ceo.name":'สรรเสริญ โภคสมบัติ <span class="o">"เจิ๋น"</span>',
     "ceo.role":"ผู้ก่อตั้ง & กรรมการผู้จัดการ — ผู้กำกับการพากย์",
     "ceo.quote":'"เป้าหมายของผมเรียบง่าย — ยกระดับคุณภาพงานพากย์ไทยสู่เวทีสากล"',
-    "ceo.bio":"กว่าสองทศวรรษในวงการโลคัลไลเซชันไทย ทั้งในบทบาทผู้กำกับการพากย์และนักพากย์ ผ่านงานภาพยนตร์บล็อกบัสเตอร์มาแล้วมากกว่า 300 เรื่อง พร้อมทุ่มเทปั้นนักพากย์รุ่นใหม่ให้วงการ ด้วยความเชื่อในเสียงพากย์ที่เป็นธรรมชาติและเก็บรายละเอียดท้องถิ่นได้อย่างแนบเนียน",
+    "ceo.bio":"กว่าสองทศวรรษในวงการพากย์ไทย ทั้งในบทบาทผู้กำกับการพากย์และนักพากย์ ผ่านงานภาพยนตร์บล็อกบัสเตอร์มาแล้วมากกว่า 300 เรื่อง พร้อมทุ่มเทปั้นนักพากย์รุ่นใหม่ให้วงการ ด้วยความเชื่อในเสียงพากย์ที่เป็นธรรมชาติและเก็บรายละเอียดท้องถิ่นได้อย่างแนบเนียน",
     "ceo.ch1":"นักแสดงละครเวที","ceo.ch2":"นักพากย์ & นักร้อง","ceo.ch3":"ดีเจ","ceo.ch4":"ผู้กำกับการพากย์","ceo.ch5":"คอนเทนต์ครีเอเตอร์","ceo.ch6":"เจ้าของสตูดิโอ",
     "ceo.f3t":"โซเชียล",
     "ceo.workslink":"ดูผลงานกำกับทั้งหมด",
     "cw.title":'ผลงานกำกับการพากย์<span class="o">ของ CEO</span>',
-    "cw.sub":"ผลงานที่คุณสรรเสริญ โภคสมบัติ รับหน้าที่กำกับการพากย์ให้กับสตูดิโอและผู้จัดจำหน่ายต่าง ๆ — แยกจากผลงานพากย์ของบริษัท CHAOR MA KOK",
+    "cw.sub":"ส่วนหนึ่งของผลงานที่คุณสรรเสริญ โภคสมบัติ รับหน้าที่กำกับการพากย์ให้กับสตูดิโอและผู้จัดจำหน่ายต่าง ๆ — แยกจากผลงานพากย์ของบริษัท CHAOR MA KOK",
     "cw.g1":"ภาพยนตร์","cw.g2":"ซีรีส์","cw.g3":"แอนิเมชัน & สารคดี",
     "tl.title":'ผลงานกำกับการพากย์<span class="o">ปีต่อปี</span>',
     "pc.title":'จากบทต้นฉบับ สู่เสียงไทย<span class="o">ใน 4 ขั้นตอน</span>',
-    "pc1.t":"แปล & ปรับบท","pc1.d":"แปลบทโดยทีมนักแปลเฉพาะทางมากกว่า 50 คน ปรับสำนวนให้เข้าปากและตรงลิปซิงก์",
+    "pc1.t":"แปล & ปรับบท","pc1.d":"ปรับบทพากย์ให้เข้าปากและตรงลิปซิงก์ คงความหมายและอารมณ์ของต้นฉบับไว้ครบ",
     "pc2.t":"แคสต์นักพากย์","pc2.d":"คัดเสียงที่ใช่จากทีมนักพากย์มากกว่า 300 คน ให้ตรงคาแรกเตอร์ที่สุด",
     "pc3.t":"บันทึกเสียง","pc3.d":"บันทึกเสียงใน 4 สตูดิโอมาตรฐาน พร้อมผู้กำกับการพากย์คุมทุกขั้นตอนอย่างละเอียด",
     "pc4.t":"มิกซ์ & ส่งมอบ","pc4.d":"ตัดต่อและมิกซ์ 2.0 และ 5.1 ตามสเปกแพลตฟอร์ม ผ่าน QC แล้วส่งมอบตรงเวลาเสมอ",
@@ -426,7 +442,7 @@ const I18N = {
     ft:"เราทำให้หนังมีชีวิต — We bring movies to life."
   },
   en: {
-    brandsub:"DUBBING STUDIO · SINCE 2001",
+    brandsub:"THAI DUBBING STUDIO · SINCE 2001",
     "nav.home":"Home", "nav.about":"About", "nav.services":"Services", "nav.works":"Our Work",
     "nav.ceo":"Meet the CEO", "nav.ceoworks":"CEO Credits", "nav.process":"Workflow", "nav.contact":"Contact", "nav.cta":"Get a Quote",
     "hero.title":'We bring every<br>story <span class="o">to life</span>',
@@ -446,7 +462,7 @@ const I18N = {
     "ab.n1":"Professional voice artists","ab.n2":"Dubbing directors","ab.n3":"Multi-language translators","ab.n4":"Vocal teams",
     "ab.n5":"Recording studios","ab.n6":"Editing + mixing rooms","ab.n7":"Animation & docu episodes","ab.n8":"Dubbing hours per year",
     "ab.gal.t":"Inside the studio","ab.gal.d":"Our recording booths, editing suites and mixing rooms",
-    "ab.team.t":"Our team","ab.team.d":"The voice artists, dubbing directors, translators and sound engineers of CHAOR MA KOK",
+    "ab.team.t":"Our team","ab.team.d":"The voice artists, dubbing directors and sound engineers of CHAOR MA KOK",
     "sv.title":'We dub <span class="o">everything</span> that speaks',
     "sv.sub":"From Hollywood blockbusters to cartoon series — we handle the full chain: script adaptation, voice direction, recording, editing and the final mix.",
     "sv1.t":"Film Dubbing","sv1.d":"Thai dubbing for more than 300 theatrical and streaming releases, mixed to cinema standards in 2.0 and 5.1.",
@@ -458,14 +474,14 @@ const I18N = {
     "wk.title":'Work that <span class="o">passed through us</span>',
     "wk.sub":"Thai dubbing delivered by the CHAOR MA KOK studio — tentpole features plus Korean, Western and Chinese series.",
     "wk.note":"* A partial list of credits. Posters are the property of their respective studios/distributors, shown as a portfolio record only.",
-    "wk.g1":"Movies","wk.g2":"Korean Series","wk.g3":"Western Series","wk.g4":"Chinese Series",
+    "wk.g1":"Movies","wk.g2":"Korean Series","wk.g3":"Western Series","wk.gjp":"Japanese Series","wk.g4":"Chinese Series",
     "wk.ceolink":"See the CEO's directing credits",
     "wk.viewall":"See all credits",
     "wk.rowseries":"Series",
     "sp.head":'Special <span class="o">Projects</span>',
     "sp.got.sub":"Directing the special Thai dub featuring Thailand's leading celebrities and artists as the main cast of the global hit series.",
     "sp.c1":"Mario Maurer","sp.c2":"Bank Preeti","sp.c3":"Bee Namthip","sp.c4":"Pleng Chontida","sp.c5":"Tu Nantida","sp.c6":"Ploychompoo",
-    "cat.film":"Movie","cat.series":"Series","cat.series.kr":"Korean Series","cat.series.west":"Western Series","cat.series.cn":"Chinese Series",
+    "cat.film":"Movie","cat.series":"Series","cat.series.kr":"Korean Series","cat.series.west":"Western Series","cat.series.jp":"Japanese Series","cat.series.cn":"Chinese Series",
     "cat.animation":"Animation","cat.docu":"Documentary",
     "md.cat":"Category","md.by":"Credit",
     "md.byCompany":"Thai dub produced by CHAOR MA KOK studio",
@@ -476,16 +492,16 @@ const I18N = {
     "ceo.name":'Sansern Pokesombat <span class="o">"Jern"</span>',
     "ceo.role":"Founder & Managing Director — Dubbing Director",
     "ceo.quote":'"My goal is simple: to help elevate our dubbing quality to the international stage."',
-    "ceo.bio":"With over two decades in Thailand's localization industry as both dubbing director and voice actor, he has directed more than 300 blockbuster movies while dedicating himself to supporting new talent — believing in natural delivery and the right local nuances that make stories feel real.",
+    "ceo.bio":"With over two decades in Thailand's dubbing industry as both dubbing director and voice actor, he has directed more than 300 blockbuster movies while dedicating himself to supporting new talent — believing in natural delivery and the right local nuances that make stories feel real.",
     "ceo.ch1":"Stage Actor","ceo.ch2":"Voice Artist & Vocalist","ceo.ch3":"DJ","ceo.ch4":"Dubbing Director","ceo.ch5":"Content Creator","ceo.ch6":"Studio Owner",
     "ceo.f3t":"Social",
     "ceo.workslink":"See all directing credits",
     "cw.title":'The CEO\'s <span class="o">directing credits</span>',
-    "cw.sub":"Titles Mr. Sansern Pokesombat directed for other studios and distributors — listed separately from CHAOR MA KOK's own studio productions.",
+    "cw.sub":"A selection of the titles Mr. Sansern Pokesombat directed for other studios and distributors — listed separately from CHAOR MA KOK's own studio productions.",
     "cw.g1":"Movies","cw.g2":"Series","cw.g3":"Animation & Documentary",
     "tl.title":'Dubbing directing credits, <span class="o">year by year</span>',
     "pc.title":'From original script to Thai voice <span class="o">in 4 steps</span>',
-    "pc1.t":"Translate & Adapt","pc1.d":"A team of more than 50 specialist translators adapts every line for natural delivery and accurate lip-sync.",
+    "pc1.t":"Translate & Adapt","pc1.d":"Every line is adapted for natural delivery and accurate lip-sync while keeping the meaning and emotion of the original.",
     "pc2.t":"Cast the Voices","pc2.d":"We match each character from a roster of more than 300 professional voice artists.",
     "pc3.t":"Record","pc3.d":"Recording in 4 treated studios with a dubbing director supervising every step in detail.",
     "pc4.t":"Mix & Deliver","pc4.d":"Edited and mixed in 2.0 and 5.1 to platform spec, QC-checked, always on time.",
