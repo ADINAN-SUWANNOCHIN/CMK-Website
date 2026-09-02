@@ -28,7 +28,7 @@ a{color:inherit;text-decoration:none}
 img{max-width:100%}
 :focus-visible{outline:3px solid var(--orange);outline-offset:3px;border-radius:4px}
 
-.wrap{max-width:1240px;margin:0 auto;padding:0 32px}
+.wrap{max-width:1440px;margin:0 auto;padding:0 32px}
 .eyebrow{
   font-family:var(--mono);font-size:12px;font-weight:500;
   letter-spacing:.22em;text-transform:uppercase;color:var(--orange-deep);
@@ -41,7 +41,7 @@ img{max-width:100%}
   margin:14px 0 12px;
 }
 .h2 .o{color:var(--orange)}
-.lead{max-width:560px;color:var(--ink-soft);font-size:16.5px}
+.lead{max-width:640px;color:var(--ink-soft);font-size:16.5px}
 
 /* ---------- Thai display typography ----------
    Latin display type is tracked tight (negative letter-spacing) with snug
@@ -63,7 +63,7 @@ html[lang="th"] .hero h1 .o{white-space:normal}
   background:rgba(255,255,255,.82);backdrop-filter:blur(14px);
   border-bottom:1px solid var(--line);
 }
-.nav-in{max-width:1240px;margin:0 auto;padding:14px 32px;display:flex;align-items:center;gap:28px}
+.nav-in{max-width:1440px;margin:0 auto;padding:14px 32px;display:flex;align-items:center;gap:28px}
 .brand{font-family:var(--display);font-weight:800;font-size:20px;letter-spacing:.02em;display:flex;align-items:center;gap:9px}
 .brand .logo{width:32px;height:32px;flex:none;display:block;transition:transform .3s cubic-bezier(.2,.7,.2,1)}
 .brand:hover .logo{transform:rotate(-8deg) scale(1.06)}
@@ -93,7 +93,7 @@ html[lang="th"] .hero h1 .o{white-space:normal}
 /* ---------- hero ---------- */
 .hero{
   position:relative;min-height:100svh;display:flex;align-items:center;
-  padding:130px 0 90px;overflow:hidden;
+  padding:96px 0 90px;overflow:hidden;
   background:
     radial-gradient(900px 500px at 85% 8%,rgba(255,122,26,.14),transparent 60%),
     radial-gradient(700px 600px at -5% 100%,rgba(255,90,0,.10),transparent 60%),
@@ -103,7 +103,7 @@ html[lang="th"] .hero h1 .o{white-space:normal}
 .hero-grid>div:first-child{position:relative;z-index:2}
 .hero h1{
   font-family:var(--display);font-weight:900;
-  font-size:clamp(40px,5.6vw,74px);line-height:1.08;letter-spacing:-.015em;
+  font-size:clamp(40px,5.6vw,86px);line-height:1.08;letter-spacing:-.015em;
 }
 .hero h1 .o{color:var(--orange);position:relative;white-space:nowrap}
 .hero h1 .o::after{
@@ -133,9 +133,18 @@ html[lang="th"] .hero h1 .o{white-space:normal}
 .stat span{font-size:13px;color:var(--ink-soft)}
 
 /* --- 3D poster drum --- */
-.stage{position:relative;z-index:1;height:560px;perspective:1400px;perspective-origin:50% 42%;transform:scale(.93)}
+.stage{
+  position:relative;z-index:1;height:560px;perspective:1400px;perspective-origin:50% 42%;
+  /* card size scales with the screen: 190px until ~1520, 240px from 1920 up.
+     --drum-shift slides the whole drum right as it grows, so the wider ring
+     clears the headline and the lead instead of swinging over them. */
+  --drum-w:clamp(165px,calc(8.83vw + 52px),220px);
+  --drum-h:calc(var(--drum-w)*1.48);
+  --drum-shift:clamp(0px,10.4vw - 150px,50px);
+  margin-left:var(--drum-shift);margin-right:calc(var(--drum-shift)*-1);
+}
 .ring{
-  position:absolute;inset:0;margin:auto;width:170px;height:250px;
+  position:absolute;inset:0;margin:auto;width:var(--drum-w);height:var(--drum-h);
   transform-style:preserve-3d;
   animation:spin 46s linear infinite;
 }
@@ -146,7 +155,7 @@ html[lang="th"] .hero h1 .o{white-space:normal}
   box-shadow:0 24px 50px -18px rgba(34,16,8,.45);
 }
 .floor{
-  position:absolute;left:50%;top:76%;width:520px;height:120px;transform:translateX(-50%);
+  position:absolute;left:50%;top:76%;width:calc(var(--drum-w)*3);height:calc(var(--drum-w)*.7);transform:translateX(-50%);
   background:radial-gradient(50% 50% at 50% 50%,rgba(255,90,0,.28),transparent 70%);
   filter:blur(8px);
 }
@@ -549,7 +558,7 @@ html[lang="th"] .hero h1 .o{white-space:normal}
 /* ---------- responsive ---------- */
 @media(max-width:1020px){
   .hero-grid{grid-template-columns:1fr;gap:6px}
-  .stage{height:430px;transform:scale(.82);margin-top:-30px}
+  .stage{height:430px;--drum-w:155px;margin-top:-30px}
   .sv-grid{grid-template-columns:repeat(2,1fr)}
   .steps{grid-template-columns:repeat(2,1fr)}
   .ct-grid{grid-template-columns:1fr;gap:36px}
@@ -571,7 +580,7 @@ html[lang="th"] .hero h1 .o{white-space:normal}
   .wrap{padding:0 20px}
   .sv-grid{grid-template-columns:1fr}
   .steps{grid-template-columns:1fr!important}
-  .stage{height:360px;transform:scale(.62);margin:-70px 0 -40px}
+  .stage{height:360px;--drum-w:124px;margin:-70px 0 -40px}
   .nav-cta{display:none}
   .m-track .poster{width:150px}
   .stats{gap:24px}
@@ -591,6 +600,21 @@ html[lang="th"] .hero h1 .o{white-space:normal}
   .cta-band{padding:28px}
   .cta-band .btn{margin-left:0}
 }
+/* --- desktop: 32px is the phone gutter; give the shell real margins here --- */
+@media(min-width:1200px){
+  .wrap{padding:0 48px}
+  .nav-in{padding:14px 48px}
+}
+/* --- large desktop: the 1240px shell left ~1/3 of a 1920 screen empty --- */
+@media(min-width:1500px){
+  .wrap,.nav-in{max-width:1560px}
+  .stage{height:570px}
+  .m-track .poster{width:212px}
+  .wk-grid{grid-template-columns:repeat(auto-fill,minmax(172px,1fr));gap:18px}
+  .stats{gap:52px}
+  .sv-grid,.steps{gap:26px}
+}
+
 @media(prefers-reduced-motion:reduce){
   *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
   .rv{opacity:1;transform:none}

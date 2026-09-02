@@ -29,7 +29,7 @@ const WORKS = [
   {en:"The Rescue",                    cat:"film", owner:"company", img:"the-rescue.jpg"},
 
   /* ---------- COMPANY · KOREAN SERIES ---------- */
-  {en:"The Remarried Empress",         cat:"series", reg:"kr", owner:"company"},
+  {en:"The Remarried Empress",         cat:"series", reg:"kr", owner:"company", img:"remarried-empress.jpg"},
   {en:"The Shards",                    cat:"series", reg:"west", owner:"company", img:"the-shards.jpg"},
   {en:"Made in Korea",                 cat:"series", reg:"kr", owner:"company", note:"S1–S2", img:"made-in-korea.jpg"},
   {en:"The Husband",                   cat:"series", reg:"kr", owner:"company", img:"the-husband.jpg"},
@@ -49,7 +49,7 @@ const WORKS = [
   {en:"Furious",                       cat:"series", reg:"west", owner:"company", note:"S1", img:"furious.jpg"},
   {en:"9-1-1",                         cat:"series", reg:"west", owner:"company", note:"S9", img:"nine-one-one.jpg"},
   {en:"The Bear",                      cat:"series", reg:"west", owner:"company", note:"S5", img:"the-bear.jpg"},
-  {en:"The Red Lady",                  cat:"series", reg:"west", owner:"company", note:"S1–S2"},
+  {en:"Rivals",                        cat:"series", reg:"west", owner:"company", note:"S1–S2", img:"rivals.jpg"},
   {en:"Scrubs",                        cat:"series", reg:"west", owner:"company", note:"S1", img:"scrubs.jpg"},
 
   /* ---------- COMPANY · CHINESE SERIES ---------- */
@@ -132,17 +132,30 @@ function posterEl(p, i){
   if(!ring) return;
   // the drum is decorative: show whatever artwork exists, newest first
   const pool = WORKS.filter(w => w.img);
-  const N = 14, W = 170;
-  const R = Math.round(W / (2 * Math.tan(Math.PI / N))) + 26;
+  // fewer, larger cards: a wider card needs a wider ring, and at 14 the ring grew
+  // far enough left to sit on the headline and the lead paragraph.
+  const N = 11;
+  const cards = [];
   for (let i = 0; i < N; i++){
     const card = document.createElement('div');
     card.className = 'card3d';
-    card.style.transform = `rotateY(${(360/N)*i}deg) translateZ(${R}px)`;
     const p = posterEl(pool[i % pool.length], i);
     p.style.borderRadius = '10px';
     card.appendChild(p);
     ring.appendChild(card);
+    cards.push(card);
   }
+  // CSS owns the card size (--drum-w) and changes it per breakpoint, so derive the
+  // radius from the live width and redo it on resize instead of hard-coding one value.
+  const layout = () => {
+    const W = parseFloat(getComputedStyle(ring).width) || 170;
+    const R = Math.round(W / (2 * Math.tan(Math.PI / N)) + W * 0.153);
+    cards.forEach((c, i) => { c.style.transform = `rotateY(${(360/N)*i}deg) translateZ(${R}px)`; });
+  };
+  layout();
+  // watch the ring itself: it resizes exactly when --drum-w changes at a breakpoint
+  if (window.ResizeObserver) new ResizeObserver(layout).observe(ring);
+  else { let rt; addEventListener('resize', () => { clearTimeout(rt); rt = setTimeout(layout, 150); }); }
 })();
 
 /* ---------- marquee (home page: one looping row per category) ---------- */
