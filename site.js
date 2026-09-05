@@ -310,7 +310,7 @@ function closeWork(){
 
 /* bump when a celeb headshot is re-cut under its existing filename, so the
    card does not keep serving a cached copy of the old crop */
-const ASSET_V = '20260906b';
+const ASSET_V = '20260906c';
 
 /* ---------- special-project carousel ---------- */
 const SPECIALS = [
