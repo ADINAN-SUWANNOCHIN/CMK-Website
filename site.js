@@ -308,6 +308,10 @@ function closeWork(){
   document.addEventListener('keydown', e => { if(e.key === 'Escape') closeWork(); });
 })();
 
+/* bump when a celeb headshot is re-cut under its existing filename, so the
+   card does not keep serving a cached copy of the old crop */
+const ASSET_V = '20260906';
+
 /* ---------- special-project carousel ---------- */
 const SPECIALS = [
   {
@@ -358,7 +362,7 @@ const SPECIALS = [
         <div class="celebs">
           ${s.cast.map(c => `
             <div class="celeb${c.img ? '' : ' nophoto'}">
-              ${c.img ? `<img src="assets/${c.img}" alt="${c.role}">` : ''}
+              ${c.img ? `<img src="assets/${c.img}?v=${ASSET_V}" alt="${c.role}">` : ''}
               <div class="cb"><b data-i18n="${c.nameKey}"></b><span>${c.role}</span></div>
             </div>`).join('')}
         </div>
