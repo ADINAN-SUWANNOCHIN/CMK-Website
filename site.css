@@ -530,6 +530,10 @@ html[lang="th"] .hero h1 .o{white-space:normal}
 .celeb .cb{padding:8px 11px 10px}
 .celeb b{font-family:var(--display);font-weight:600;font-size:13.5px;display:block;color:#fff}
 .celeb span{font-family:var(--mono);font-size:9.5px;letter-spacing:.08em;color:var(--orange-hot);text-transform:uppercase}
+/* cast members with no verified headshot: keep the card, drop the picture rather
+   than risk showing the wrong person's face */
+.celeb.nophoto{display:flex;align-items:center;min-height:74px;background:linear-gradient(150deg,rgba(255,122,26,.14),rgba(255,255,255,.04))}
+.celeb.nophoto .cb{padding:10px 12px}
 
 /* ---------- ceo ---------- */
 .ceo-grid{display:grid;grid-template-columns:.88fr 1.12fr;gap:56px;align-items:start}

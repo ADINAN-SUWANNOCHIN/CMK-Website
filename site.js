@@ -10,16 +10,18 @@
 const WORKS = [
   /* ---------- COMPANY · MOVIES ---------- */
   {en:"Send Help",                     cat:"film", owner:"company", img:"send-help.jpg"},
-  {en:"Wonder Man",                    cat:"series", reg:"west", owner:"company", img:"wonder-man.jpg"},
-  {en:"Project Hail Mary",             cat:"film", owner:"company", img:"hail-mary.jpg"},
   {en:"Predator: Badlands",            cat:"film", owner:"company", img:"predator-badlands.jpg"},
-  {en:"Sonic the Hedgehog 3",          cat:"film", owner:"company", img:"sonic-3.jpg"},
   {en:"The Amateur",                   cat:"film", owner:"company", img:"the-amateur.jpg"},
   {en:"Kraven the Hunter",             cat:"film", owner:"company", img:"kraven.jpg"},
   {en:"Venom: The Last Dance",         cat:"film", owner:"company", img:"venom-3.jpg"},
   {en:"Beverly Hills Cop: Axel F",     cat:"film", owner:"company", img:"beverly-hills-cop4.jpg"},
   {en:"Alien: Romulus",                cat:"film", owner:"company", img:"alien-romulus.jpg"},
   {en:"Bad Boys: Ride or Die",         cat:"film", owner:"company", img:"bad-boys-4.jpg"},
+  {en:"Leave the World Behind",        cat:"film", owner:"company", img:"leave-the-world-behind.jpg"},
+  {en:"Society of the Snow",           cat:"film", owner:"company", img:"society-of-the-snow.jpg"},
+  {en:"See How They Run",              cat:"film", owner:"company", img:"see-how-they-run.jpg"},
+  {en:"Code 8",                        cat:"film", owner:"company", img:"code-8.jpg"},
+  {en:"Sly",                           cat:"film", owner:"company", img:"sly.jpg"},
   {en:"Antlers",                       cat:"film", owner:"company", img:"antlers.jpg"},
   {en:"The Creator",                   cat:"film", owner:"company", img:"the-creator.jpg"},
   {en:"The Boogeyman",                 cat:"film", owner:"company", img:"boogeyman.jpg"},
@@ -29,12 +31,10 @@ const WORKS = [
   {en:"The Rescue",                    cat:"film", owner:"company", img:"the-rescue.jpg"},
 
   /* ---------- COMPANY · KOREAN SERIES ---------- */
-  {en:"The Remarried Empress",         cat:"series", reg:"kr", owner:"company", img:"remarried-empress.jpg"},
-  {en:"The Shards",                    cat:"series", reg:"west", owner:"company", img:"the-shards.jpg"},
   {en:"Made in Korea",                 cat:"series", reg:"kr", owner:"company", note:"S1–S2", img:"made-in-korea.jpg"},
   {en:"The Husband",                   cat:"series", reg:"kr", owner:"company", img:"the-husband.jpg"},
   {en:"Perfect Crown",                 cat:"series", reg:"kr", owner:"company", img:"perfect-crown.jpg"},
-  {en:"Doctor on the Edge",           cat:"series", reg:"kr", owner:"company", img:"dr-on-the-edge.jpg"},
+  {en:"Doctor on the Edge",            cat:"series", reg:"kr", owner:"company", img:"dr-on-the-edge.jpg"},
   {en:"A Shop for Killers",            cat:"series", reg:"kr", owner:"company", note:"S1–S2", img:"shop-for-killers.jpg"},
   {en:"Flex x Cop",                    cat:"series", reg:"kr", owner:"company", note:"S1–S2", img:"flex-x-cop.jpg"},
   {en:"Gold Land",                     cat:"series", reg:"kr", owner:"company", img:"gold-land.jpg"},
@@ -44,6 +44,20 @@ const WORKS = [
   {en:"Head Over Heels",               cat:"series", reg:"kr", owner:"company", img:"head-over-heels.jpg"},
   {en:"Good Boy",                      cat:"series", reg:"kr", owner:"company", img:"good-boy.jpg"},
   {en:"Spice Up Our Love",             cat:"series", reg:"kr", owner:"company", img:"spice-up-our-love.jpg"},
+  {en:"Hotel Del Luna",                cat:"series", reg:"kr", owner:"company", img:"hotel-del-luna.jpg"},
+  {en:"Link: Eat, Love, Kill",         cat:"series", reg:"kr", owner:"company", img:"link.jpg"},
+  {en:"Big Mouth",                     cat:"series", reg:"kr", owner:"company", img:"big-mouth.jpg"},
+  {en:"Bloody Heart",                  cat:"series", reg:"kr", owner:"company", img:"bloody-heart.jpg"},
+  {en:"Nice to Not Meet You",          cat:"series", reg:"kr", owner:"company"},
+  {en:"Welcome to Waikiki",            cat:"series", reg:"kr", owner:"company", img:"welcome-to-waikiki.jpg"},
+  {en:"My ID is Gangnam Beauty",       cat:"series", reg:"kr", owner:"company", img:"gangnam-beauty.jpg"},
+  {en:"I'm Not a Robot",               cat:"series", reg:"kr", owner:"company", img:"im-not-a-robot.jpg"},
+  {en:"My Love from the Star",         cat:"series", reg:"kr", owner:"company", img:"my-love-from-the-star.jpg"},
+  {en:"Partners for Justice",          cat:"series", reg:"kr", owner:"company", img:"partners-for-justice.jpg"},
+  {en:"Princess Hours",                cat:"series", reg:"kr", owner:"company", img:"princess-hours.jpg"},
+  {en:"Dr. Romantic",                  cat:"series", reg:"kr", owner:"company", img:"dr-romantic.jpg"},
+  {en:"Legend of the Blue Sea",        cat:"series", reg:"kr", owner:"company", img:"legend-of-the-blue-sea.jpg"},
+  {en:"Not Suitable for Work",         cat:"series", reg:"kr", owner:"company", img:"not-suitable-for-work.jpg"},
 
   /* ---------- COMPANY · WESTERN SERIES ---------- */
   {en:"Furious",                       cat:"series", reg:"west", owner:"company", note:"S1", img:"furious.jpg"},
@@ -51,22 +65,57 @@ const WORKS = [
   {en:"The Bear",                      cat:"series", reg:"west", owner:"company", note:"S5", img:"the-bear.jpg"},
   {en:"Rivals",                        cat:"series", reg:"west", owner:"company", note:"S1–S2", img:"rivals.jpg"},
   {en:"Scrubs",                        cat:"series", reg:"west", owner:"company", note:"S1", img:"scrubs.jpg"},
+  {en:"The Shards",                    cat:"series", reg:"west", owner:"company", img:"the-shards.jpg"},
+  {en:"The Night Agent",               cat:"series", reg:"west", owner:"company", img:"night-agent.jpg"},
+  {en:"Mr. Midnight: Beware the Monsters", cat:"series", reg:"west", owner:"company", img:"mr-midnight.jpg"},
+  {en:"The Brothers Sun",              cat:"series", reg:"west", owner:"company", img:"the-brothers-sun.jpg"},
 
-  /* ---- moved from the CEO list: studio productions, per the client's notes ---- */
-  {en:"Goblin",                        cat:"series", reg:"kr", owner:"company", img:"goblin.jpg"},
-  {en:"Hotel Del Luna",                cat:"series", reg:"kr", owner:"company", img:"hotel-del-luna.jpg"},
-  {en:"Vincenzo",                      cat:"series", reg:"kr", owner:"company", img:"vincenzo.jpg"},
-  {en:"The Penthouse: War in Life",    cat:"series", reg:"kr", owner:"company", img:"penthouse.jpg"},
-  {en:"Link: Eat, Love, Kill",         cat:"series", reg:"kr", owner:"company", img:"link.jpg"},
-  {en:"Big Mouth",                     cat:"series", reg:"kr", owner:"company", img:"big-mouth.jpg"},
+  /* ---------- COMPANY · JAPANESE SERIES ---------- */
   {en:"From Me to You",                cat:"series", reg:"jp", owner:"company", img:"from-me-to-you.jpg"},
   {en:"The Makanai: Cooking for the Maiko House", cat:"series", reg:"jp", owner:"company", img:"makanai.jpg"},
   {en:"Sanctuary",                     cat:"series", reg:"jp", owner:"company", img:"sanctuary.jpg"},
-  {en:"The Night Agent",               cat:"series", reg:"west", owner:"company", img:"night-agent.jpg"},
-  {en:"Mr. Midnight: Beware the Monsters", cat:"series", reg:"west", owner:"company", img:"mr-midnight.jpg"},
 
   /* ---------- COMPANY · CHINESE SERIES ---------- */
   {en:"Zhan Zhao Adventures",          cat:"series", reg:"cn", owner:"company", note:"S1", img:"zhan-zhao.jpg"},
+
+  /* ---------- COMPANY · VARIETY ---------- */
+  {en:"Battle of Fates",               cat:"variety", owner:"company", note:"S1", img:"battle-of-fates.jpg"},
+  {en:"Just Make Up",                  cat:"variety", owner:"company"},
+  {en:"Takeshi's Castle Thailand",     cat:"variety", owner:"company", img:"takeshis-castle-thailand.jpg"},
+
+  /* ---------- COMPANY · ANIME ---------- */
+  {en:"Captain Laserhawk: A Blood Dragon Remix", cat:"anime", owner:"company", note:"S1", img:"captain-laserhawk.jpg"},
+  {en:"Magilumiere Magical Girls Inc.", cat:"anime", owner:"company"},
+  {en:"From Old Country Bumpkin to Master Swordsman", cat:"anime", owner:"company"},
+  {en:"The Demon King's Daughter is Too Kind!!", cat:"anime", owner:"company", img:"demon-kings-daughter.jpg"},
+  {en:"An Adventurer's Daily Grind at Age 29", cat:"anime", owner:"company", note:"S1"},
+  {en:"A Misanthrope Teaches a Class for Demi-Humans", cat:"anime", owner:"company", note:"S1"},
+  {en:"The Villainess Is Adored by the Prince", cat:"anime", owner:"company", note:"S1"},
+  {en:"In the Clear Moonlit Dusk",     cat:"anime", owner:"company", note:"S1", img:"clear-moonlit-dusk.jpg"},
+  {en:"Roll Over and Die",             cat:"anime", owner:"company", note:"S1"},
+  {en:"Kunon the Sorcerer Can See Through", cat:"anime", owner:"company", note:"S1"},
+  {en:"New Saga",                      cat:"anime", owner:"company", note:"S1"},
+  {en:"Release That Witch",            cat:"anime", owner:"company", note:"S1", img:"release-that-witch.jpg"},
+  {en:"An Observation Log of My Fiancée", cat:"anime", owner:"company", note:"S1"},
+  {en:"Eren the Southpaw",             cat:"anime", owner:"company", note:"S1", img:"eren-southpaw.jpg"},
+  {en:"The Warrior Princess and the Barbaric King", cat:"anime", owner:"company", note:"S1"},
+  {en:"From Overshadowed to Overpowered", cat:"anime", owner:"company", note:"S1"},
+  {en:"Heroine? Saint? No, I'm an All-Works Maid (And Proud of It)!", cat:"anime", owner:"company", note:"S1"},
+  {en:"I Became a Legend after My 10 Year-Long Last Stand", cat:"anime", owner:"company", note:"S1", img:"became-a-legend.jpg"},
+  {en:"Oh Boy, Was I Wrong About Her", cat:"anime", owner:"company", note:"S1"},
+  {en:"The Duke's Son Claims He Won't Love Me", cat:"anime", owner:"company", note:"S1", img:"dukes-son.jpg"},
+  {en:"The Insipid Prince's Furtive Grab for the Throne", cat:"anime", owner:"company", note:"S1"},
+  {en:"The Oblivious Saint Can't Contain Her Power", cat:"anime", owner:"company", note:"S1", img:"oblivious-saint.jpg"},
+  {en:"Young Ladies Don't Play Fighting Games", cat:"anime", owner:"company", note:"S1", img:"young-ladies-fighting-games.jpg"},
+
+  /* ---- animation & documentary moved off the CEO list, per the client's notes ---- */
+  {en:"Kitti Katz",                    cat:"animation", owner:"company", img:"kitti-katz.jpg"},
+  {en:"Spirit Rangers",                cat:"animation", owner:"company", img:"spirit-rangers.jpg"},
+  {en:"Tekken: Bloodline",             cat:"animation", owner:"company", img:"tekken.jpg"},
+  {en:"Bluey",                         cat:"animation", owner:"company", img:"bluey.jpg"},
+  {en:"Bananas in Pyjamas",            cat:"animation", owner:"company", img:"bananas.jpg"},
+  {en:"America the Beautiful",         cat:"docu", owner:"company", img:"america-beautiful.jpg"},
+  {en:"Chasing Waves",                 cat:"docu", owner:"company", img:"chasing-waves.jpg"},
 
   /* ---------- CEO · MOVIES ---------- */
   {en:"Spider-Man: Brand New Day",           cat:"film", owner:"ceo", note:"2026", img:"spiderman-bnd.jpg"},
@@ -74,6 +123,20 @@ const WORKS = [
   {en:"The Mandalorian and Grogu",           cat:"film", owner:"ceo", note:"2026", img:"mandalorian-grogu.jpg"},
   {en:"Insidious: Out of the Further",       cat:"film", owner:"ceo", note:"2026", img:"insidious-6.jpg"},
   {en:"Resident Evil",                       cat:"film", owner:"ceo", note:"2026", img:"resident-evil-2026.jpg"},
+  {en:"IF",                                  cat:"film", owner:"ceo", img:"if.jpg"},
+  {en:"A Quiet Place",                       cat:"film", owner:"ceo", img:"a-quiet-place.jpg"},
+  {en:"A Quiet Place Part II",               cat:"film", owner:"ceo", img:"a-quiet-place-2.jpg"},
+  {en:"A Quiet Place: Day One",              cat:"film", owner:"ceo", img:"a-quiet-place-day-one.jpg"},
+  {en:"The Equalizer",                       cat:"film", owner:"ceo", img:"the-equalizer.jpg"},
+  {en:"The Equalizer 2",                     cat:"film", owner:"ceo", img:"the-equalizer-2.jpg"},
+  {en:"The Equalizer 3",                     cat:"film", owner:"ceo", img:"the-equalizer-3.jpg"},
+  {en:"Resident Evil",                       cat:"film", owner:"ceo", note:"2002", img:"resident-evil-1.jpg"},
+  {en:"Resident Evil: Apocalypse",           cat:"film", owner:"ceo", img:"resident-evil-apocalypse.jpg"},
+  {en:"Resident Evil: Extinction",           cat:"film", owner:"ceo", img:"resident-evil-extinction.jpg"},
+  {en:"Resident Evil: Afterlife",            cat:"film", owner:"ceo", img:"resident-evil-afterlife.jpg"},
+  {en:"Resident Evil: Retribution",          cat:"film", owner:"ceo", img:"resident-evil-retribution.jpg"},
+  {en:"Resident Evil: The Final Chapter",    cat:"film", owner:"ceo", img:"resident-evil-final-chapter.jpg"},
+  {en:"Resident Evil: Welcome to Raccoon City", cat:"film", owner:"ceo", img:"resident-evil-raccoon-city.jpg"},
   {en:"Avatar: The Way of Water",             cat:"film", owner:"ceo", img:"avatar-2.jpg"},
   {en:"Black Panther: Wakanda Forever",       cat:"film", owner:"ceo", img:"wakanda-forever.jpg"},
   {en:"Guardians of the Galaxy Vol. 3",       cat:"film", owner:"ceo", img:"guardians-3.jpg"},
@@ -102,18 +165,11 @@ const WORKS = [
   {en:"Daredevil: Born Again",         cat:"series", reg:"west", owner:"ceo", note:"S1–S2", img:"daredevil-born-again.jpg"},
   {en:"The Punisher: One Last Kill",   cat:"series", reg:"west", owner:"ceo", note:"หนังสั้นพิเศษ"},
 
-  /* ---------- CEO · ANIMATION & DOCUMENTARY ---------- */
-  {en:"Kitti Katz",                    cat:"animation", owner:"ceo", img:"kitti-katz.jpg"},
+  /* ---------- CEO · ANIMATION ---------- */
   {en:"Clifford the Big Red Dog",      cat:"animation", owner:"ceo", img:"clifford.jpg"},
-  {en:"Spirit Rangers",                cat:"animation", owner:"ceo", img:"spirit-rangers.jpg"},
-  {en:"Tekken: Bloodline",             cat:"animation", owner:"ceo", img:"tekken.jpg"},
   {en:"Phineas and Ferb",              cat:"animation", owner:"ceo", img:"phineas-ferb.jpg"},
-  {en:"Kim Possible",                  cat:"animation", owner:"ceo", img:"kim-possible.jpg"},
-  {en:"Bluey",                         cat:"animation", owner:"ceo", img:"bluey.jpg"},
   {en:"American Dragon: Jake Long",    cat:"animation", owner:"ceo", img:"jake-long.jpg"},
-  {en:"Bananas in Pyjamas",            cat:"animation", owner:"ceo", img:"bananas.jpg"},
-  {en:"America the Beautiful",         cat:"docu", owner:"ceo", img:"america-beautiful.jpg"},
-  {en:"Chasing Waves",                 cat:"docu", owner:"ceo", img:"chasing-waves.jpg"},
+  {en:"Kim Possible",                  cat:"animation", owner:"ceo", img:"kim-possible.jpg"},
 ];
 
 const COMPANY_WORKS = WORKS.filter(w => w.owner === 'company');
@@ -196,8 +252,10 @@ buildGrid('gridFilm',  COMPANY_WORKS.filter(p => p.cat === 'film'), 'nFilm');
 buildGrid('gridKr',    COMPANY_WORKS.filter(p => p.cat === 'series' && p.reg === 'kr'),   'nKr');
 buildGrid('gridWest',  COMPANY_WORKS.filter(p => p.cat === 'series' && p.reg === 'west'), 'nWest');
 buildGrid('gridJp',    COMPANY_WORKS.filter(p => p.cat === 'series' && p.reg === 'jp'),   'nJp');
-buildGrid('gridJp',    COMPANY_WORKS.filter(p => p.cat === 'series' && p.reg === 'jp'),   'nJp');
 buildGrid('gridCn',    COMPANY_WORKS.filter(p => p.cat === 'series' && p.reg === 'cn'),   'nCn');
+buildGrid('gridVar',   COMPANY_WORKS.filter(p => p.cat === 'variety'),   'nVar');
+buildGrid('gridAnime', COMPANY_WORKS.filter(p => p.cat === 'anime'),     'nAnime');
+buildGrid('gridAnim',  COMPANY_WORKS.filter(p => p.cat === 'animation' || p.cat === 'docu'), 'nAnim');
 buildGrid('ceoFilm',   CEO_WORKS.filter(p => p.cat === 'film'),     'nCeoFilm');
 buildGrid('ceoSeries', CEO_WORKS.filter(p => p.cat === 'series'),   'nCeoSeries');
 buildGrid('ceoAnim',   CEO_WORKS.filter(p => p.cat === 'animation' || p.cat === 'docu'), 'nCeoAnim');
@@ -265,6 +323,19 @@ const SPECIALS = [
       {img:'celeb-ploy.jpg',  nameKey:'sp.c6', role:'Arya Stark'},
     ]
   },
+  {
+    title: 'ครุฑ มหายุทธ หิมพานต์',
+    poster: 'assets/krut.jpg',
+    subKey: 'sp.krut.sub',
+    cast: [
+      {img:'krut-nadech.jpg',   nameKey:'sp.k1', role:'พญาวัชรครุฑ'},
+      {img:'krut-rong.jpg',     nameKey:'sp.k2', role:'ท้าวสุบรรณพล / ผู้บรรยาย'},
+      {img:'krut-montri.jpg',   nameKey:'sp.k3', role:'ท้าวสุริยอินทร์'},
+      {img:'', nameKey:'sp.k4', role:'กนกนารี'},
+      {img:'',nameKey:'sp.k5', role:'เจ้าพระยากลาโหม / กาลรากษส'},
+      {img:'',    nameKey:'sp.k6', role:'อสูรทมิฬ'},
+    ]
+  },
   // ↓ next special project drops in here with the same shape
 ];
 
@@ -286,8 +357,8 @@ const SPECIALS = [
         <p class="sp-sub" data-i18n="${s.subKey}"></p>
         <div class="celebs">
           ${s.cast.map(c => `
-            <div class="celeb">
-              <img src="assets/${c.img}" alt="${c.role}">
+            <div class="celeb${c.img ? '' : ' nophoto'}">
+              ${c.img ? `<img src="assets/${c.img}" alt="${c.role}">` : ''}
               <div class="cb"><b data-i18n="${c.nameKey}"></b><span>${c.role}</span></div>
             </div>`).join('')}
         </div>
@@ -386,17 +457,19 @@ const I18N = {
     "sv5.t":"งานร้อง (Vocal)","sv5.d":"ทีมนักร้องประจำสตูดิโอ 3 ทีม สำหรับเพลงประกอบภาพยนตร์ การ์ตูน และงานร้องทุกรูปแบบ",
     "sv6.t":"ตัดต่อ & มิกซ์เสียง","sv6.d":"ห้องตัดต่อ 4 ห้อง ห้องมิกซ์ 3 ห้อง พร้อมเทคโนโลยีล่าสุด มิกซ์ตามสเปกทุกแพลตฟอร์ม ผ่าน QC ทุกไฟล์",
     "wk.title":'ผลงานที่<span class="o">ผ่านมือเรา</span>',
-    "wk.sub":"ผลงานพากย์ไทยของสตูดิโอ CHAOR MA KOK — ภาพยนตร์ฟอร์มยักษ์ ซีรีส์เกาหลี ฝรั่ง ญี่ปุ่น และจีน",
+    "wk.sub":"ผลงานพากย์ไทยของสตูดิโอ CHAOR MA KOK — ภาพยนตร์ฟอร์มยักษ์ ซีรีส์เกาหลี ฝรั่ง ญี่ปุ่น จีน วาไรตี้ อนิเมะ และแอนิเมชัน/สารคดี",
     "wk.note":"* แสดงผลงานเพียงบางส่วน — ภาพโปสเตอร์เป็นลิขสิทธิ์ของสตูดิโอ/ผู้จัดจำหน่ายแต่ละราย ใช้เพื่อบันทึกประวัติผลงานเท่านั้น",
-    "wk.g1":"ภาพยนตร์","wk.g2":"ซีรีส์เกาหลี","wk.g3":"ซีรีส์ฝรั่ง","wk.gjp":"ซีรีส์ญี่ปุ่น","wk.g4":"ซีรีส์จีน",
+    "wk.g1":"ภาพยนตร์","wk.g2":"ซีรีส์เกาหลี","wk.g3":"ซีรีส์ฝรั่ง","wk.gjp":"ซีรีส์ญี่ปุ่น","wk.g4":"ซีรีส์จีน","wk.gvar":"วาไรตี้","wk.ganime":"อนิเมะ","wk.ganim":"แอนิเมชัน & สารคดี",
     "wk.ceolink":"ดูผลงานกำกับการพากย์ของ CEO",
     "wk.viewall":"ดูผลงานทั้งหมด",
     "wk.rowseries":"ซีรีส์",
     "sp.head":'โปรเจกต์<span class="o">พิเศษ</span>',
     "sp.got.sub":"กำกับการพากย์เสียงเวอร์ชันพิเศษ โดยเหล่าดาราและศิลปินแถวหน้าของไทยมารับบทตัวละครหลักของซีรีส์ระดับโลก",
     "sp.c1":"มาริโอ้ เมาเร่อ","sp.c2":"แบงค์ ปรีติ","sp.c3":"บี น้ำทิพย์","sp.c4":"เพลง ชนม์ทิดา","sp.c5":"ตู่ นันทิดา","sp.c6":"พลอยชมพู",
+    "sp.krut.sub":"กำกับการพากย์เสียงภาพยนตร์แอนิเมชันไทยฟอร์มยักษ์ นำโดย ณเดชน์ คูกิมิยะ ในบทพญาวัชรครุฑ ร่วมกับนักแสดงและนักพากย์มากประสบการณ์",
+    "sp.k1":"ณเดชน์ คูกิมิยะ","sp.k2":"รอง เค้ามูลคดี","sp.k3":"มนตรี เจนอักษร","sp.k4":"นลินี ชีวะสาคร","sp.k5":"เสนอทิพย์ วงศ์ศิริจินดา","sp.k6":"ปิยะ ชำนาญกิจ",
     "cat.film":"ภาพยนตร์","cat.series":"ซีรีส์","cat.series.kr":"ซีรีส์เกาหลี","cat.series.west":"ซีรีส์ฝรั่ง","cat.series.jp":"ซีรีส์ญี่ปุ่น","cat.series.cn":"ซีรีส์จีน",
-    "cat.animation":"แอนิเมชัน","cat.docu":"สารคดี",
+    "cat.animation":"แอนิเมชัน","cat.docu":"สารคดี","cat.variety":"วาไรตี้","cat.anime":"อนิเมะ",
     "md.cat":"หมวดหมู่","md.by":"ผลงานของ",
     "md.byCompany":"พากย์ไทยโดยสตูดิโอ CHAOR MA KOK",
     "md.byCeo":"กำกับการพากย์โดย สรรเสริญ โภคสมบัติ",
@@ -472,17 +545,19 @@ const I18N = {
     "sv5.t":"Vocal","sv5.d":"Three in-house vocal teams for movie and cartoon theme songs and every kind of singing work.",
     "sv6.t":"Editing & Mixing","sv6.d":"4 editing rooms and 3 mixing rooms with the latest technology — platform-spec mixes, QC-checked on every file.",
     "wk.title":'Work that <span class="o">passed through us</span>',
-    "wk.sub":"Thai dubbing delivered by the CHAOR MA KOK studio — tentpole features plus Korean, Western, Japanese and Chinese series.",
+    "wk.sub":"Thai dubbing delivered by the CHAOR MA KOK studio — tentpole features plus Korean, Western, Japanese and Chinese series, variety, anime and animation/documentary.",
     "wk.note":"* A partial list of credits. Posters are the property of their respective studios/distributors, shown as a portfolio record only.",
-    "wk.g1":"Movies","wk.g2":"Korean Series","wk.g3":"Western Series","wk.gjp":"Japanese Series","wk.g4":"Chinese Series",
+    "wk.g1":"Movies","wk.g2":"Korean Series","wk.g3":"Western Series","wk.gjp":"Japanese Series","wk.g4":"Chinese Series","wk.gvar":"Variety","wk.ganime":"Anime","wk.ganim":"Animation & Documentary",
     "wk.ceolink":"See the CEO's directing credits",
     "wk.viewall":"See all credits",
     "wk.rowseries":"Series",
     "sp.head":'Special <span class="o">Projects</span>',
     "sp.got.sub":"Directing the special Thai dub featuring Thailand's leading celebrities and artists as the main cast of the global hit series.",
     "sp.c1":"Mario Maurer","sp.c2":"Bank Preeti","sp.c3":"Bee Namthip","sp.c4":"Pleng Chontida","sp.c5":"Tu Nantida","sp.c6":"Ploychompoo",
+    "sp.krut.sub":"Directing the Thai dub of the landmark Thai animated feature, led by Nadech Kugimiya as Phaya Watchara Krut alongside a cast of veteran actors and voice artists.",
+    "sp.k1":"Nadech Kugimiya","sp.k2":"Rong Kaomulkadee","sp.k3":"Montri Janaksara","sp.k4":"Nalinee Cheewasakorn","sp.k5":"Sanohthip Wongsirijinda","sp.k6":"Piya Chamnankit",
     "cat.film":"Movie","cat.series":"Series","cat.series.kr":"Korean Series","cat.series.west":"Western Series","cat.series.jp":"Japanese Series","cat.series.cn":"Chinese Series",
-    "cat.animation":"Animation","cat.docu":"Documentary",
+    "cat.animation":"Animation","cat.docu":"Documentary","cat.variety":"Variety","cat.anime":"Anime",
     "md.cat":"Category","md.by":"Credit",
     "md.byCompany":"Thai dub produced by CHAOR MA KOK studio",
     "md.byCeo":"Dubbing directed by Sansern Pokesombat",
