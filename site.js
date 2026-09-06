@@ -172,6 +172,50 @@ const WORKS = [
   {en:"Kim Possible",                  cat:"animation", owner:"ceo", img:"kim-possible.jpg"},
 ];
 
+/* Thai dub credits, from the distributor's credit sheet. Rows are
+   [character EN, character TH, voice EN, voice TH]; the name lists are
+   [EN, TH]. Only the titles the studio has been given a sheet for. */
+const CREDITS = {
+  "The Shards": [
+    {s:"", cast:[["Bret", "เบร็ท", "Taychin Sribenjachod", "เตชินห์ ศรีเบญจโชติ"], ["Susan", "ซูซาน", "Paranee Sornaram", "ปารณีย์ ศรอร่าม"], ["Thom", "ทอม", "Sarunyu Srisonthong", "ศรัณยู ศรีศรทอง"], ["Debbie", "เดบบี้", "Chanamon Bejraputra", "ชนมน เพชรบุตร"], ["Robert", "โรเบิร์ต", "Tanabodee Charoenwai", "ธนบดี เจริญวัย"]], add:[["Athipat Thanomsumphant", "อธิพัฒน์ ถนอมสัมพันธ์"], ["Nisachon Thanapatkraiporn", "นิศาชล ธนภัทรไกรพร"], ["Natapong Theansawatkit", "ณฐพงษ์ เธียรสวัสดิ์กิจ"], ["Niramon Kitpinyochai", "นิรมล กิจภิญโญชัย"], ["Jakrarat Srirak", "จักรรัตน์ ศรีรักษ์"], ["Apinan Teeranantakul", "อภินันท์ ธีระนันทกุล"], ["Sansanee Tinkeeradit", "ศันสนีย์ ติณห์กีรดิศ"], ["Akapon Subpaya-archin", "อรรคพล ทรัพยอาจิณ"]], dir:[["Niramon Kitpinyochai", "นิรมล กิจภิญโญชัย"]], tr:[["Thanyamai Preecha", "ธันยมัย ปรีชา"]]},
+  ],
+  "Made in Korea": [
+    {s:"S1", cast:[["Baek Kitae", "แบคกีแท", "Natapong  Theansawatkit", "ณฐพงษ์ เธียรสวัสดิ์กิจ"], ["Jang Geonyoung", "จางกอนยอง", "Ittipon Maameegate", "อิทธิพล มามีเกตุ"], ["Bae Geumji", "แบกึมจี", "Nalinee Cheewasakorn", "นลินี ชีวะสาคร"], ["Baek Kihyun", "แบคกีฮยอน", "Rujira Khajeecharoen", "รุจิระ ขจีเจริญ"], ["Cheon Seokjung", "ชอนซอกจุง", "Chanon Jamnearpath", "ชานน จำเนียรแพทย์"], ["Choi Yuji / Ikeda Yuji", "ชเวยูจี / อิเคดะ ยูจิ", "Papitchaya Namjaroenlap", "ปพิชญา นำเจริญลาภ"], ["Oh Yejin", "โอเยจิน", "Rapheesittacha Permsuriya", "รพีสิฐฌาน์ เพิ่มสุริยา"]], add:[["Rewadee Miankoet", "เรวดี เมียนเกิด"], ["Akapon Subpaya-archin", "อรรคพล ทรัพยอาจิณ"], ["Athipat Thanomsumphant", "อธิพัฒน์ ถนอมสัมพันธ์"], ["Tanakrit Jenkrongtham", "ธนกฤต เจนครองธรรม"], ["Ukrit Disthakorn", "อุกฤษณ์ ดิษฐากรณ์"], ["Wanit Ariyakeatsakul", "วานิช อริยะเกียรติสกุล"]], dir:[["Rewadee Miankoet", "เรวดี เมียนเกิด"]], tr:[["Dhitiya Boonsinsukh", "ฐิติยา บุญสินสุข"]]},
+    {s:"S2", cast:[["Baek Kitae", "แบคกีแท", "Natapong Theansawatkit", "ณฐพงษ์ เธียรสวัสดิ์กิจ"], ["Jang Geonyoung", "จางกอนยอง", "Ittipon Maameegate", "อิทธิพล มามีเกตุ"], ["Ikeda Yuji (AKA Choi Yuji)", "อิเคดะ ยูจิ / ชเวยูจี", "Papitchaya Namjaroenlap", "ปพิชญา นำเจริญลาภ"], ["Baek Kihyun", "แบคกีฮยอน", "Rujira Khajeecharoen", "รุจิระ ขจีเจริญ"], ["Director Namsik Cho", "โจนัมชิก", "Ittipon Maameegate", "อิทธิพล มามีเกตุ"], ["Oh Yejin", "โอเยจิน", "Rapheesittacha Permsuriya", "รพีสิฐฌาน์ เพิ่มสุริยา"], ["Baek Soyeong", "แบคโซยอง", "Rewadee Miankoet", "เรวดี เมียนเกิด"], ["Cheon Seokjung", "ชอนซอกจุง", "Chanon Jamnearpath", "ชานน จำเนียรแพทย์"], ["Pyo Haksu", "พโยฮักซู", "Ukrit Disthakorn", "อุกฤษณ์ ดิษฐากรณ์"], ["Ahn Jaeho", "อันแจโฮ", "Wanit Ariyakeatsakul", "วานิช อริยะเกียรติสกุล"], ["Hwang Daesik", "ฮวังแดชิก", "Akapon Subpaya-archin", "อรรคพล ทรัพยอาจิณ"], ["Min Jonghwan", "มินจงฮวาน", "Phubet Patprecha", "ภูเบศ พัฒน์ปรีชา"], ["Kihun", "กีฮุน", "Phubet Patprecha", "ภูเบศ พัฒน์ปรีชา"]], add:[["Aesanee Sumranthananan", "เอษะณีย์ สำราญธนนันท์"]], dir:[["Rewadee Miankoet", "เรวดี เมียนเกิด"]], tr:[["Dhitiya Boonsinsukh", "ฐิติยา บุญสินสุข"]]},
+  ],
+  "The Husband": [
+    {s:"", cast:[["Taeju", "แทจู", "Komsan Ratanakornbordee", "คมสรร รัตนากรบดี"], ["Seyun", "เซยุน", "Noppawan Haemabutra", "นพวรรณ เหมะบุตร"], ["Manhui", "มันฮี", "Sorawid Tongtang", "สรวิศ ตงเท่ง"], ["Dongchan", "ดงชาน", "Jirawat Vachirasarunpatra", "จิราวัฒน์ วชิรศรัณย์ภัทร"], ["Sukyeong", "ซูกยอง", "Nattha Hiransathit", "ณัฐฐา หิรัญสถิตย์"], ["Chiung", "ชีอุง", "Kittitorn Pankokgruad", "กิตติธร พันธ์โคกกรวด"], ["Jeongwon", "จองวอน", "Aesanee Sumranthananan", "เอษะณีย์ สำราญธนนันท์"], ["Taeyeong", "แทยอง", "Ukrit Disthakorn", "อุกฤษณ์ ดิษฐากรณ์"], ["Myeonghui", "มยองฮี", "Sirikarn Supphasitthikunchai", "สิริกาญจน์ ศุภสิทธิกุลชัย"], ["Detective Park", "สายสืบพัค", "Phubet Patprecha", "ภูเบศ พัฒน์ปรีชา"], ["Dosik", "โดชิก", "Ukrit Disthakorn", "อุกฤษณ์ ดิษฐากรณ์"], ["Suhyeong", "ซูฮยอง", "Natapong Theansawatkit", "ณฐพงษ์ เธียรสวัสดิ์กิจ"], ["Gyeongae", "คยองแอ", "Nattha Hiransathit", "ณัฐฐา หิรัญสถิตย์"], ["Hyeonsu", "ฮยอนซู", "Natapong Theansawatkit", "ณฐพงษ์ เธียรสวัสดิ์กิจ"], ["Seungtaek", "ซึงแทก", "Kittitorn Pankokgruad", "กิตติธร พันธ์โคกกรวด"], ["Detective Kim", "สายสืบคิม", "Phubet Patprecha", "ภูเบศ พัฒน์ปรีชา"], ["Jeongsu", "จองซู", "Natapong Theansawatkit", "ณฐพงษ์ เธียรสวัสดิ์กิจ"]], dir:[["Natapong Theansawatkit", "ณฐพงษ์ เธียรสวัสดิ์กิจ"]], tr:[["Dhitiya Boonsinsukh", "ฐิติยา บุญสินสุข"]]},
+  ],
+  "Perfect Crown": [
+    {s:"", cast:[["Huiju", "ฮีจู", "Noppawan Haemabutra", "นพวรรณ เหมะบุตร"], ["Wan", "อีอัน", "Thanakrit Endurasamee", "ธนกฤต เอ็นดูรัศมี"], ["Irang", "อีรัง", "Nalinee Cheewasakorn", "นลินี ชีวะสาคร"], ["Jeongwoo", "จองอู", "Akapon Subpaya-archin", "อรรคพล ทรัพยอาจิณ"], ["Hyejeong", "ฮเยจอง", "Papitchaya Namjaroenlap", "ปพิชญา นำเจริญลาภ"], ["Hyeon", "ฮยอน", "Kittitorn Pankokgruad", "กิตติธร พันธ์โคกกรวด"]], add:[["Natapong Theansawatkit", "ณฐพงษ์ เธียรสวัสดิ์กิจ"], ["Athipat Thanomsumphant", "อธิพัฒน์ ถนอมสัมพันธ์"], ["Natat Phudpong", "ณธรรศ ผุดผ่อง"], ["Boonrasri Chayawan", "บุญราศรี ฉายะวรรณ"], ["Chidchanok Yamma", "ชิดชนก แย้มมา"], ["Supintra Han", "ศุภินทรา หาน"], ["Kedsadapron Jienjarern", "เกศฎาภรณ์ เจียรเจริญ"], ["Jetiya Chandra", "เจติยา จันทรา"], ["Nattha Hiransathit", "ณัฐฐา หิรัญสถิตย์"]], dir:[["Natapong Theansawatkit", "ณฐพงษ์ เธียรสวัสดิ์กิจ"]], tr:[["Natnicha Chotisak", "ณัฐฐ์ณิฌาณ์ โชติศักดิ์"]]},
+  ],
+  "Doctor on the Edge": [
+    {s:"", cast:[["Do Jiui", "โดจีอี", "Pakpoom Wanthong", "ภาคภูมิ วันทอง"], ["Yuk Hari", "ยุกฮารี", "Jetiya Chandra", "เจติยา จันทรา"], ["Sinhye", "ชินฮเย", "Nattha Hiransathit", "ณัฐฐา หิรัญสถิตย์"], ["Jucheon", "จูชอน", "Taychin Sribenjachod", "เตชินห์ ศรีเบญจโชติ"], ["Geumja", "กึมจา", "Rewadee Miankoet", "เรวดี เมียนเกิด"], ["Jeongseon", "จองซอน", "Patamaporn Jarupathirun", "ปฐมาพร จารุพัฒน์หิรัญ"], ["Mija", "มีจา", "Rewadee Miankoet", "เรวดี เมียนเกิด"], ["Chiyeon", "ชียอน", "Natat Phudpong", "ณธรรศ ผุดผ่อง"]], add:[["Natapong Theansawatkit", "ณฐพงษ์ เธียรสวัสดิ์กิจ"], ["Ittipon Maameegate", "อิทธิพล มามีเกตุ"], ["Nakarin Kaowhog", "นครินทร์ กวาวหก"], ["Athipat Thanomsumphant", "อธิพัฒน์ ถนอมสัมพันธ์"]], dir:[["Natapong Theansawatkit", "ณฐพงษ์ เธียรสวัสดิ์กิจ"]], tr:[["Natnicha Chotisak", "ณัฐฐ์ณิฌาณ์ โชติศักดิ์"]]},
+  ],
+  "A Shop for Killers": [
+    {s:"S1", cast:[["Jeong Jin-man", "จองจินมัน", "Pipat Boonsittilers", "พิพัฒน์ บุญสิทธิเลิศ"], ["Jeong Jian", "จองจีอัน", "Boonrasri Chayawan", "บุญราศรี ฉายะวรรณ"], ["Bae Jeong-min", "แพจองมิน", "Piyapat Saralamba", "ปิยภัทร  ศรลัมพ์"], ["So Min-hye", "โซมินฮเย", "Nattha Hiransathit", "ณัฐฐา หิรัญสถิตย์"], ["Pasin", "พสิน", "Akapon Subpaya-archin", "อรรคพล ทรัพยอาจิณ"], ["Brother", "บราเธอร์", "Natchaphol Sukchalearn", "ณัชพล สุขเจริญ"], ["Lee Seongjo", "อีซองโจ", "Apichart Smuthkiri", "อภิชาติ สมุทคีรี"]], add:[["Rattanachai Lueangwongngam", "รัตนชัย เหลืองวงศ์งาม"], ["Tinpawat Dhitthahiran", "ติณณ์ปวัฒน์ ดิษฐาหิรัญ"], ["Yonlaphat Mantieng", "ยลภัทร หมั่นเที่ยง"]], dir:[["Chalurmphan Padungwit", "เฉลิมพันธุ์ ผดุงวิศว์"]], tr:[["Athipat Thanomsumphant", "อธิพัฒน์ ถนอมสัมพันธ์"]]},
+    {s:"S2", cast:[["Jeong Jinman", "จองจินมัน", "Pipat Boonsittilers", "พิพัฒน์ บุญสิทธิเลิศ"], ["Jeong Jian", "จองจีอัน", "Boonrasri Chayawan", "บุญราศรี ฉายะวรรณ"], ["So Minhye", "โซมินฮเย", "Nattha Hiransathit", "ณัฐฐา หิรัญสถิตย์"], ["Pasin Kradek", "พสิน กระเดก", "Akapon Subpaya-archin", "อรรคพล ทรัพยอาจิณ"], ["Brother", "บราเธอร์", "Natchaphol Sukchalearn", "ณัชพล สุขเจริญ"], ["Lee Seongjo", "อีซองโจ", "Apichart Smuthkiri", "อภิชาติ สมุทคีรี"], ["Kusanagi Jin", "คุซานางิ จิน", "Papitchaya Namjaroenlap", "ปพิชญา นำเจริญลาภ"], ["Q", "คิว", "Nattha Hiransathit", "ณัฐฐา หิรัญสถิตย์"], ["J", "เจ", "Athipat Thanomsumphant", "อธิพัฒน์ ถนอมสัมพันธ์"], ["Kwak Chulseung", "กวักชอลซึง", "Tinpawat Dhitthahiran", "ติณณ์ปวัฒน์ ดิษฐาหิรัญ"]], add:[["Rattanachai Lueangwongngam", "รัตนชัย เหลืองวงศ์งาม"], ["Piyapat Saralamba", "ปิยภัทร  ศรลัมพ์"], ["Akejit Sansurn", "เอกจิต สรรเสริญ"], ["Panitan Chansajanakul", "ปณิธาน ชันษาจนกุล"], ["Papitchaya Namjaroenlap", "ปพิชญา นำเจริญลาภ"]], dir:[["Chalurmphan Padungwit", "เฉลิมพันธุ์ ผดุงวิศว์"]], tr:[["Dhitiya Boonsinsukh", "ฐิติยา บุญสินสุข"]]},
+  ],
+  "Flex x Cop": [
+    {s:"S1", cast:[["Jin Isoo", "จินอีซู", "Rujira Khajeecharoen", "รุจิระ ขจีเจริญ"], ["Lee Ganghyun", "อีกังฮยอน", "Papitchaya Namjaroenlap", "ปพิชญา นำเจริญลาภ"], ["Choi Jeonghun", "ชเวจองฮุน", "Ukrit Disthakorn", "อุกฤษณ์ ดิษฐากรณ์"], ["Choi Kyungjin", "ชเวกยองจิน", "Kittitorn Pankokgruad", "กิตติธร พันธ์โคกกรวด"], ["Park Junyoung", "พัคจุนยอง", "Natat Phudpong", "ณธรรศ ผุดผ่อง"], ["Jin Seungju", "จินซึงจู", "Phubet Patprecha", "ภูเบศ พัฒน์ปรีชา"], ["Jin Myeongchul", "จินมยองชอล", "Natapong Theansawatkit", "ณฐพงษ์ เธียรสวัสดิ์กิจ"], ["Yoon Jiwon", "ยุนจีวอน", "Jetiya Chandra", "เจติยา จันทรา"]], add:[["Apichart Smuthkiri", "อภิชาติ สมุทคีรี"], ["Rewadee Miankoet", "เรวดี เมียนเกิด"], ["Nattha Hiransathit", "ณัฐฐา หิรัญสถิตย์"]], dir:[["Natapong Theansawatkit", "ณฐพงษ์ เธียรสวัสดิ์กิจ"]], tr:[["Kanokwan Khongthean", "กนกวรรณ คงเถื่อน"]]},
+  ],
+  "Gold Land": [
+    {s:"", cast:[["KIM HEEJU", "คิมฮีจู", "Nattchanita Kunsuwan", "ณัชนิตา กุลสุวรรณ"], ["PARK HOCHEOL", "พัคโฮชอล", "Apichit Likhitlimpreecha", "อภิชิต ลิขิตลิ้มปรีชา"], ["LEE DOKYUNG", "อีโดคยอง", "Pipat Boonsittilers", "พิพัฒน์ บุญสิทธิเลิศ"], ["CHA YUJIN", "ชายูจิน", "Rewadee Miankoet", "เรวดี เมียนเกิด"], ["JANG WOOK", "จางอุก", "Jitti Rungnoree", "จิตติ รุ่งโนรี"], ["YEO SUNOK", "ยอซอนอ๊ก", "Lakkhana Narksiri", "ลักขณา นาคศิริ"]], add:[["Natapong Theansawatkit", "ณฐพงษ์ เธียรสวัสดิ์กิจ"], ["Ukrit Disthakorn", "อุกฤษณ์ ดิษฐากรณ์"], ["Apichart Smuthkiri", "อภิชาติ สมุทคีรี"], ["Papitchaya Namjaroenlap", "ปพิชญา นำเจริญลาภ"]], dir:[["Natapong Theansawatkit", "ณฐพงษ์ เธียรสวัสดิ์กิจ"]], tr:[["Phitchaya Sonsiri", "พิชยา สนธิ์ศิริ"]]},
+  ],
+  "In Your Radiant Season": [
+    {s:"", cast:[["Song Haran", "ซงฮารัน", "Noppawan Haemabutra", "นพวรรณ เหมะบุตร"], ["Seonu Chan", "ซอนอูชาน", "Apichit Likhitlimpreecha", "อภิชิต ลิขิตลิ้มปรีชา"], ["Kim Nana", "คิมนานา", "Naiyana Thipsri", "นัยนา ทิพย์ศรี"], ["Song Hayeong", "ซงฮายอง", "Wichaya Wangcherdchuwong", "วิชยา หวังเชิดชูวงศ์"], ["Song Hadam", "ซงฮาดัม", "Patamaporn Jarupathirun", "ปฐมาพร จารุพัฒน์หิรัญ"], ["Park Manjae", "พัคมันแจ", "Bancha  Haemabutra", "บัญชา  เหมะบุตร"], ["Ben", "เบ็น", "Pakpoom Wanthong", "ภาคภูมิ วันทอง"], ["Cha Yougyum", "ชายูกยอม", "Pakpoom Wanthong", "ภาคภูมิ วันทอง"]], add:[["Chanon Jamnearpath", "ชานน จำเนียรแพทย์"], ["Komsan Ratanakornbordee", "คมสรร รัตนากรบดี"], ["Dawin Wisanbannawit", "ฎาวิล วิศาลบรรณวิทย์"], ["Dhanarat Boonratsuwan", "ธัณรัชถ์ บุญรัตน์สุวรรณ"], ["Supintra Han", "ศุภินทรา หาน"], ["Aesanee Sumranthananan", "เอษะณีย์ สำราญธนนันท์"]], dir:[["Chanon Jamnearpath", "ชานน จำเนียรแพทย์"]], tr:[["Dhitiya Boonsinsukh", "ฐิติยา บุญสินสุข"]]},
+  ],
+  "The Nice Guy": [
+    {s:"", cast:[["Seokcheol", "ซ็อกชอล", "Chanon Jamnearpath", "ชานน จำเนียรแพทย์"], ["Miyoung", "มียอง", "Noppawan Haemabutra", "นพวรรณ เหมะบุตร"], ["Taehoon", "แทฮุน", "Komsan Ratanakornbordee", "คมสรร รัตนากรบดี"], ["Seokkyung", "ซ็อกกย็อง", "Niramon Kitpinyochai", "นิรมล กิจภิญโญชัย"], ["Seokhee", "ซ็อกฮี", "Wichaya Wangcherdchuwong", "วิชยา หวังเชิดชูวงศ์"], ["Silgon", "ชิลกน", "Boonchana Chokwichakosol", "บุญชนะ โชควิชาโกศล"], ["Sangyeol", "ซังยอล", "Akapon Subpaya-archin", "อรรคพล ทรัพยอาจิณ"], ["Changsoo", "ชางซู", "Witthaya Phasuk", "วิทยา ผาสุข"]], add:[["Ittipon Maameegate", "อิทธิพล มามีเกตุ"], ["Ukrit Disthakorn", "อุกฤษณ์ ดิษฐากรณ์"], ["Prapat Sintopworakul", "ประภัฒน์ สินธพวรกุล"], ["Papitchaya Namjaroenlap", "ปพิชญา นำเจริญลาภ"], ["Aesanee Sumranthananan", "เอษะณีย์ สำราญธนนันท์"], ["Athipat Thanomsumphant", "อธิพัฒน์ ถนอมสัมพันธ์"]], dir:[["Chanon Jamnearpath", "ชานน จำเนียรแพทย์"]], tr:[["Picharee Kittikose", "พิชารีย์ กิตติโฆษณ์"]]},
+  ],
+  "The Manipulated": [
+    {s:"", cast:[["TAEJOONG", "แทจุง", "Rujira Khajeecharoen", "รุจิระ ขจีเจริญ"], ["YOHAN", "โยฮัน", "Pakpoom Wanthong", "ภาคภูมิ วันทอง"], ["TAEJIN", "แทจิน", "Athipat Thanomsumphant", "อธิพัฒน์ ถนอมสัมพันธ์"], ["SANGRAK", "ซังรัก", "Chanon Jamnearpath", "ชานน จำเนียรแพทย์"], ["DEOKSU", "ด็อกซู", "Witthaya Phasuk", "วิทยา ผาสุข"], ["GANGJAE", "กังแจ", "Dawin Wisanbannawit", "ฎาวิล วิศาลบรรณวิทย์"], ["CHEOLHWAN", "ชอลฮวาน", "Komsan Ratanakornbordee", "คมสรร รัตนากรบดี"], ["NOH YONGSIK", "โนยงชิก", "Krin Aksorndee", "กริน อักษรดี"], ["JIYONG", "จียง", "Pakpoom Wanthong", "ภาคภูมิ วันทอง"], ["EUNBI", "อึนบี", "Papitchaya Namjaroenlap", "ปพิชญา นำเจริญลาภ"]], add:[["Niramon Kitpinyochai", "นิรมล กิจภิญโญชัย"], ["Nalinee Cheewasakorn", "นลินี ชีวะสาคร"], ["Ukrit Disthakorn", "อุกฤษณ์ ดิษฐากรณ์"]], dir:[["Niramon Kitpinyochai", "นิรมล กิจภิญโญชัย"]], tr:[["Phitchaya Sonsiri", "พิชยา สนธิ์ศิริ"]]},
+  ],
+  "Zhan Zhao Adventures": [
+    {s:"", cast:[["Zhan Zhao", "จั่นเจา", "Pakpoom Wanthong", "ภาคภูมิ วันทอง"], ["Huo Linglong", "ฮั่วหลิงหลง", "Wichaya Wangcherdchuwong", "วิชยา หวังเชิดชูวงศ์"], ["Bai Yutang", "ไป๋อวี้ถัง", "Natat Phudpong", "ณธรรศ ผุดผ่อง"], ["Ding Yuehua", "ติงเยว่หัว", "Sirikarn Supphasitthikunchai", "สิริกาญจน์ ศุภสิทธิกุลชัย"]], add:[["Ukrit Disthakorn", "อุกฤษณ์ ดิษฐากรณ์"], ["Kittitorn Pankokgruad", "กิตติธร พันธ์โคกกรวด"], ["Phubet Patprecha", "ภูเบศ พัฒน์ปรีชา"], ["Sanohthip Wongsirijinda", "เสนาะทิพย์ วงศ์ศิริจินดา"], ["Natapong Theansawatkit", "ณฐพงษ์ เธียรสวัสดิ์กิจ"], ["Athipat Thanomsumphant", "อธิพัฒน์ ถนอมสัมพันธ์"], ["Chalurmphan Padungwit", "เฉลิมพันธุ์ ผดุงวิศว์"], ["Aesanee Sumranthananan", "เอษะณีย์ สำราญธนนันท์"], ["Maneekorn Thongdong", "มณีกร ทองดง"]], dir:[["Natapong Theansawatkit", "ณฐพงษ์ เธียรสวัสดิ์กิจ"], ["Athipat Thanomsumphant", "อธิพัฒน์ ถนอมสัมพันธ์"], ["Chalurmphan Padungwit", "เฉลิมพันธุ์ ผดุงวิศว์"]], tr:[["Phitchaya Sonsiri", "พิชยา สนธิ์ศิริ"]]},
+  ],
+};
+
 const COMPANY_WORKS = WORKS.filter(w => w.owner === 'company');
 const CEO_WORKS     = WORKS.filter(w => w.owner === 'ceo');
 
@@ -262,10 +306,9 @@ buildGrid('ceoAnim',   CEO_WORKS.filter(p => p.cat === 'animation' || p.cat === 
 
 /* ---------- work modal ---------- */
 let lastFocus = null;
-function openWork(p){
-  const m = document.getElementById('workModal');
-  if(!m) return;
-  lastFocus = document.activeElement;
+/* everything inside the modal is built from data, so it has to be rebuilt when
+   the language changes — data-i18n only reaches nodes that exist in the markup */
+function fillWork(m, p){
   const dict = I18N[document.documentElement.lang] || I18N.th;
   const art = p.img
     ? `<img src="assets/${p.img}" alt="${p.en}">`
@@ -283,15 +326,49 @@ function openWork(p){
   m.querySelector('.md-rows').innerHTML = rows
     .map(([k, v]) => `<div class="md-row"><b>${k}</b><span>${v}</span></div>`).join('');
 
+  renderCredits(m.querySelector('.md-credits'), p.en, dict);
+
   const badge = m.querySelector('.md-badge');
   badge.textContent = p.owner === 'company' ? dict['md.tagCompany'] : dict['md.tagCeo'];
   badge.className = 'md-badge ' + p.owner;
+}
 
+function openWork(p){
+  const m = document.getElementById('workModal');
+  if(!m) return;
+  lastFocus = document.activeElement;
+  m.__work = p;
+  fillWork(m, p);
   m.hidden = false;
   document.body.style.overflow = 'hidden';
   requestAnimationFrame(() => m.classList.add('on'));
   m.querySelector('.md-close').focus();
 }
+/* ---------- Thai dub credits inside the work modal ---------- */
+function renderCredits(host, title, dict){
+  if(!host) return;
+  const blocks = CREDITS[title];
+  host.hidden = !blocks;
+  if(!blocks) { host.innerHTML = ''; return; }
+  const th = (document.documentElement.lang || 'th') === 'th';
+  const one = pair => pair[th ? 1 : 0];
+  const join = list => list.map(one).join(' · ');
+  const line = (label, list) => list && list.length
+    ? `<div class="cr-line"><b>${label}</b><span>${join(list)}</span></div>` : '';
+  host.innerHTML = `<h4 class="cr-head">${dict['cr.head']}</h4>` + blocks.map(b => `
+    <div class="cr-block">
+      ${b.s ? `<div class="cr-season">${b.s}</div>` : ''}
+      ${b.cast && b.cast.length ? `
+        <div class="cr-grid">
+          <div class="cr-th">${dict['cr.char']}</div><div class="cr-th">${dict['cr.va']}</div>
+          ${b.cast.map(c => `<div class="cr-c">${th ? c[1] : c[0]}</div><div class="cr-v">${th ? c[3] : c[2]}</div>`).join('')}
+        </div>` : ''}
+      ${line(dict['cr.add'], b.add)}
+      ${line(dict['cr.dir'], b.dir)}
+      ${line(dict['cr.tr'],  b.tr)}
+    </div>`).join('');
+}
+
 function closeWork(){
   const m = document.getElementById('workModal');
   if(!m || m.hidden) return;
@@ -310,7 +387,7 @@ function closeWork(){
 
 /* bump when a celeb headshot is re-cut under its existing filename, so the
    card does not keep serving a cached copy of the old crop */
-const ASSET_V = '20260906c';
+const ASSET_V = '20260906d';
 
 /* ---------- special-project carousel ---------- */
 const SPECIALS = [
@@ -478,7 +555,7 @@ const I18N = {
     "md.byCompany":"พากย์ไทยโดยสตูดิโอ CHAOR MA KOK",
     "md.byCeo":"กำกับการพากย์โดย สรรเสริญ โภคสมบัติ",
     "md.tagCompany":"ผลงานบริษัท","md.tagCeo":"ผลงานกำกับของ CEO",
-    "md.close":"ปิด",
+    "md.close":"ปิด","cr.head":"เครดิตพากย์ไทย","cr.char":"ตัวละคร","cr.va":"นักพากย์","cr.add":"เสียงประกอบ","cr.dir":"ผู้กำกับการพากย์","cr.tr":"ผู้แปลบท",
     "ceo.badge":"Blockbusters",
     "ceo.name":'สรรเสริญ โภคสมบัติ <span class="o">"เจิ๋น"</span>',
     "ceo.role":"ผู้ก่อตั้ง & กรรมการผู้จัดการ — ผู้กำกับการพากย์",
@@ -566,7 +643,7 @@ const I18N = {
     "md.byCompany":"Thai dub produced by CHAOR MA KOK studio",
     "md.byCeo":"Dubbing directed by Sansern Pokesombat",
     "md.tagCompany":"Studio production","md.tagCeo":"CEO directing credit",
-    "md.close":"Close",
+    "md.close":"Close","cr.head":"Thai dub credits","cr.char":"Character","cr.va":"Voice","cr.add":"Additional voices","cr.dir":"Dubbing director","cr.tr":"Translator",
     "ceo.badge":"Blockbusters",
     "ceo.name":'Sansern Pokesombat <span class="o">"Jern"</span>',
     "ceo.role":"Founder & Managing Director — Dubbing Director",
@@ -625,6 +702,8 @@ function setLang(l){
     if(dict[k] !== undefined) el.textContent = dict[k];
   });
   document.documentElement.lang = l;
+  const md = document.getElementById('workModal');
+  if(md && !md.hidden && md.__work) fillWork(md, md.__work);
   document.getElementById('btn-th')?.classList.toggle('on', l === 'th');
   document.getElementById('btn-en')?.classList.toggle('on', l === 'en');
   try{ localStorage.setItem('cmk-lang', l); }catch(e){}

@@ -508,6 +508,22 @@ html[lang="th"] .hero h1 .o{white-space:normal}
 .md-row:last-child{border-bottom:0}
 .md-row b{font-family:var(--display);font-weight:600;flex:none;width:96px}
 .md-row span{color:var(--ink-soft)}
+
+/* credits list inside the work modal */
+.cr-head{font-family:var(--display);font-weight:700;font-size:15px;margin:22px 0 10px;padding-top:16px;border-top:1px solid var(--line)}
+.cr-block + .cr-block{margin-top:18px}
+.cr-season{font-family:var(--mono);font-size:10.5px;letter-spacing:.16em;color:var(--orange-deep);margin-bottom:8px}
+.cr-grid{display:grid;grid-template-columns:1fr 1fr;gap:2px 14px;font-size:14px}
+.cr-th{font-family:var(--mono);font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-soft);padding-bottom:5px}
+.cr-c{padding:4px 0}
+.cr-v{padding:4px 0;color:var(--ink-soft)}
+.cr-line{display:flex;gap:12px;margin-top:12px;font-size:13.5px;align-items:baseline}
+.cr-line b{font-family:var(--display);font-weight:600;flex:none;width:112px}
+.cr-line span{color:var(--ink-soft);line-height:1.65}
+@media(max-width:640px){
+  .cr-line{display:block}
+  .cr-line b{display:block;width:auto;margin-bottom:2px}
+}
 .md-close{
   position:absolute;top:14px;right:14px;width:36px;height:36px;border-radius:50%;
   border:1.5px solid var(--line);background:#fff;color:var(--ink-soft);cursor:pointer;
