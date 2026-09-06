@@ -48,7 +48,7 @@ const WORKS = [
   {en:"Link: Eat, Love, Kill",         cat:"series", reg:"kr", owner:"company", img:"link.jpg"},
   {en:"Big Mouth",                     cat:"series", reg:"kr", owner:"company", img:"big-mouth.jpg"},
   {en:"Bloody Heart",                  cat:"series", reg:"kr", owner:"company", img:"bloody-heart.jpg"},
-  {en:"Nice to Not Meet You",          cat:"series", reg:"kr", owner:"company"},
+  {en:"Nice to Not Meet You",          cat:"series", reg:"kr", owner:"company", img:"nice-to-not-meet-you.jpg"},
   {en:"Welcome to Waikiki",            cat:"series", reg:"kr", owner:"company", img:"welcome-to-waikiki.jpg"},
   {en:"My ID is Gangnam Beauty",       cat:"series", reg:"kr", owner:"company", img:"gangnam-beauty.jpg"},
   {en:"I'm Not a Robot",               cat:"series", reg:"kr", owner:"company", img:"im-not-a-robot.jpg"},
@@ -163,7 +163,7 @@ const WORKS = [
   {en:"Ms. Marvel",                    cat:"series", reg:"west", owner:"ceo", img:"ms-marvel.jpg"},
   {en:"Secret Invasion",               cat:"series", reg:"west", owner:"ceo", img:"secret-invasion.jpg"},
   {en:"Daredevil: Born Again",         cat:"series", reg:"west", owner:"ceo", note:"S1–S2", img:"daredevil-born-again.jpg"},
-  {en:"The Punisher: One Last Kill",   cat:"series", reg:"west", owner:"ceo", note:"หนังสั้นพิเศษ"},
+  {en:"The Punisher: One Last Kill",   cat:"series", reg:"west", owner:"ceo", note:"หนังสั้นพิเศษ", img:"punisher-one-last-kill.jpg"},
 
   /* ---------- CEO · ANIMATION ---------- */
   {en:"Clifford the Big Red Dog",      cat:"animation", owner:"ceo", img:"clifford.jpg"},
@@ -219,6 +219,10 @@ const CREDITS = {
 const COMPANY_WORKS = WORKS.filter(w => w.owner === 'company');
 const CEO_WORKS     = WORKS.filter(w => w.owner === 'ceo');
 
+/* bump whenever any artwork is replaced under its existing filename, so a
+   returning visitor is not served the cached copy of the old image */
+const ASSET_V = '20260906e';
+
 /* stable "poster art" for titles with no artwork yet */
 const ART = ['rays','eclipse','split','wavez','grid','dots','sun','stripes'];
 const artFor = i => ART[i % ART.length];
@@ -229,7 +233,7 @@ function posterEl(p, i){
   d.className = 'poster' + (p.img ? '' : ' noimg');
   d.type = 'button';
   const art = p.img
-    ? `<img class="ph" src="assets/${p.img}" alt="${p.en}">`
+    ? `<img class="ph" src="assets/${p.img}?v=${ASSET_V}" alt="${p.en}">`
     : `<div class="art ${artFor(i || 0)}"></div>`;
   const mk = p.owner === 'company' ? '<span class="mk">CM</span>' : '';
   d.innerHTML = `${art}
@@ -311,7 +315,7 @@ let lastFocus = null;
 function fillWork(m, p){
   const dict = I18N[document.documentElement.lang] || I18N.th;
   const art = p.img
-    ? `<img src="assets/${p.img}" alt="${p.en}">`
+    ? `<img src="assets/${p.img}?v=${ASSET_V}" alt="${p.en}">`
     : `<div class="art ${artFor(WORKS.indexOf(p))}"></div>`;
   m.querySelector('.md-art').innerHTML = art;
   m.querySelector('.md-title').textContent = p.en;
@@ -384,10 +388,6 @@ function closeWork(){
   m.querySelector('.md-backdrop').addEventListener('click', closeWork);
   document.addEventListener('keydown', e => { if(e.key === 'Escape') closeWork(); });
 })();
-
-/* bump when a celeb headshot is re-cut under its existing filename, so the
-   card does not keep serving a cached copy of the old crop */
-const ASSET_V = '20260906d';
 
 /* ---------- special-project carousel ---------- */
 const SPECIALS = [
